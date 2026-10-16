@@ -1,0 +1,218 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container mt-5">
+    <h3>Cuestionario</h3>
+
+    <div class="row">
+        <!-- Content -->
+        <div class="col-md-7 col-lg-8 p-3">
+            <!-- Nav Pills -->
+            <ul class="nav nav-tabs nav-justified">
+                {% for i in "123456789101" %}
+                <li class="nav-item">
+                    <a class="nav-link"
+                       data-section="{{ forloop.counter }}"
+                       href="{% url 'apps.cuestionarios:seccion' cuestionario.id forloop.counter %}">
+                       {{ forloop.counter }}
+                    </a>
+                </li>
+                {% endfor %}
+            </ul>
+
+            <br>
+
+            <form method="post">
+                {% csrf_token %}
+
+                <div class="card mb-4">
+                    <div class="card-header">IV. Finalidades del tratamiento para las cuales se obtienen los datos personales distinguiendo aquellas que requieren el consentimiento de la persona titular /¿Cuáles son las finalidades del tratamiento? </div>
+                    <div class="card-body contenedor-grid">
+
+                        <div class="row">
+                            <h5>Finalidad</h5>
+                            <div class="col-md-6">
+                                 <label>
+                                    ¿Cuál es la finalidad?
+                                </label>
+                                <input type="text" id="finalidad" class="form-control" name="finalidad" value="">
+                            </div>
+                            <div class="col-md-6">
+                                <label>
+                                    ¿Es una finalidad principal?
+                                </label>
+                                <select id="finPrincipal"  class="form-select">
+                                    <option value="true">
+                                        Sí
+                                    </option>
+                                    <option value="false">
+                                        No
+                                    </option>
+                                </select>
+                            </div>
+                            <div class="col-md-6">
+                                <label>
+                                    ¿Es necesaria para cumplir una obligación legal?
+                                </label>
+                                <select id="necesaria"  class="form-select">
+                                    <option value="true">
+                                        Sí
+                                    </option>
+                                    <option value="false">
+                                        No
+                                    </option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row" id="divInnecesaria" style="display: none">
+                            <div class="col-md-6">
+                                <label>
+                                    ¿Requiere consentimiento de la persona titular?
+                                </label>
+                                <select id="reqConsentimiento" class="form-select">
+                                    <option value="false">
+                                        No
+                                    </option>
+                                    <option value="true">
+                                        Sí
+                                    </option>
+                                </select>
+                            </div>
+                            <div class="col-md-6" id="divConsentimiento" style="display: none">
+                                <label>
+                                    Tipo de consentimiento:
+                                </label>
+                                <select id="tipoConsentimiento" class="form-select">
+                                    <option value="T">Tácito</option>
+                                    <option value="E">Expreso</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6" id="divOtro" style="display: none">
+                                <label>¿Cuál?</label>
+                                <input type="text" id="otroTipoConsentimiento">
+                            </div>
+                        </div>
+
+                        <hr>
+
+                        <div class="row justify-content-end">
+                            <div class="col-2">
+                                <button type="button" id="btnAgregar" class="btn btn-custom">
+                                    Agregar
+                                </button>
+                            </div>
+
+                            <div class="col-3">
+                                <button type="button" id="btnLimpiar" class="btn btn-custom">
+                                    Limpiar campos
+                                </button>
+                            </div>
+
+                            <div class="col-3">
+                                <button type="button" id="btnModificar" class="btn btn-custom">
+                                    Guardar cambios
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="btns-div">
+                    <button class="btn btn-custom" type="submit">Siguiente</button>
+                </div>
+
+                <br>
+
+            </form>
+
+            <!-- Tab Content -->
+<!--            <form method="post">-->
+<!--                {% csrf_token %}-->
+
+                <div class="card mb-4">
+                    <div class="card-body contenedor-grid">
+                        <table class="table table-bordered align-middle">
+                            <thead class="table-light">
+                                <tr>
+                                    <th>Finalidad</th>
+                                    <th>¿Es <b>necesaria</b> para <br>cumplir una obligacíon legal?</th>
+                                    <th>¿Requiere <b>consentimiento</b>?</th>
+                                    <th>Acción</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tablaFinalidadesInv">
+                                {% for finalid in finalidades %}
+                                <tr id="finalidadInv-{{ finalid.id }}">
+                                    <td>
+                                        <p>{{ finalid.finalidad }}</p>
+
+                                        {% if finalid.finPrincipal %}
+                                            <span class="badge bg-success">
+                                            Primaria
+                                            </span>
+                                        {% else %}
+                                            <span class="badge bg-secondary">
+                                            Secundaria
+                                            </span>
+                                        {% endif %}
+                                    </td>
+                                    <td>
+                                        {% if finalid.necesaria %}
+                                        <p>Necesaria</p>
+                                        {% else %}
+                                        <p>No</p>
+                                        {% endif %}
+                                    </td>
+                                    <td>
+                                        {% if finalid.reqConsentimiento %}
+                                        <p>Requiere consentimiento </p> {{ finalid.get_tipoConsentimiento_display }}
+                                        {% else %}
+                                        <p>No</p>
+                                        {% endif %}
+                                    </td>
+                                    <td>
+                                        <button class="btn btn-danger btnEliminar"
+                                                data-id="{{ finalid.id }}">
+                                            Eliminar
+                                        </button>
+
+                                        <br><br>
+
+                                        <button class="btn btn-warning btnEditar"
+                                                data-id="{{ finalid.id }}">
+                                            Editar
+                                        </button>
+                                    </td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    
+                </div>
+
+            </div>
+
+<!--            <div class="btns-div">-->
+<!--                <button class="btn btn-primary mt-2" type="submit">Siguiente</button>-->
+<!--            </div>-->
+            
+<!--            </form>-->
+        </div>
+        <!-- Sidebar -->
+        <div class="col-md-5 col-lg-4 bg-light border-start" id="sidebar">
+            <br><br><br><br>
+            <div class="collapse show" id="sidebarContent">
+                El aviso de privacidad deberá contener, al menos, la siguiente información: <b>(Artículo 21.)</b>
+                <br><br>
+                <b>IV. Las finalidades del tratamiento para las cuales se obtienen los datos personales, distinguiendo aquéllas que requieren el consentimiento de la persona titular;</b>
+                <br> <br>
+                La finalidad es el motivo, uso y objetivo específico por el cual una organización recopila y trata datos personales
+                <br><br>
+                La finalidad primaria es el motivo principal y necesario por el cual se recogen los datos personales para cumplir una obligación contractual o legal, mientras que la finalidad secundaria es un uso accesorio u opcional que no es esencial para mantener dicha relación.
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>GAP</title>
+</head>
+<body>
+    <h1>Bienvenido {{ request.user.username }}</h1>
+
+    <p>Ya ingresaste al sistema.</p>
+
+    <a href="{% url 'apps.usuarios:logout' %}">Cerrar sesión</a>
+</body>
+</html>

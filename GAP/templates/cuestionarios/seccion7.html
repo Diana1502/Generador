@@ -1,0 +1,265 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container mt-5">
+    <h3>Cuestionario</h3>
+    <div class="row">
+        <!-- Content -->
+        <div class="col-md-7 col-lg-8 p-3">
+            <!-- Nav Pills -->
+            <ul class="nav nav-tabs nav-justified">
+                {% for i in "123456789101" %}
+                <li class="nav-item">
+                    <a class="nav-link"
+                       data-section="{{ forloop.counter }}"
+                       href="{% url 'apps.cuestionarios:seccion' cuestionario.id forloop.counter %}">
+                       {{ forloop.counter }}
+                    </a>
+                </li>
+                {% endfor %}
+            </ul>
+
+            <br>
+            <!-- Tab Content -->
+            <form method="post">
+                {% csrf_token %}
+
+                <div class="card mb-4">
+                    <div class="card-header">VI. Domicilio de la Unidad de Transparencia /¿Dónde está ubicada la Unidad y Transparencia? </div>
+                    <div class="card-body contenedor-grid">
+                        <div class="row">
+                            <h5>Datos de contacto</h5>
+                            <div class="col-md-6">
+                                {{ form.telefono.label_tag }}
+                                {{ form.telefono }}
+                                {{ form.telefono.errors }}
+                            </div>
+                            <div class="col-md-6">
+                                {{ form.extension.label_tag }}
+                                {{ form.extension }}
+                                {{ form.extension.errors }}
+                            </div>
+                            <div class="col-md-6">
+                                {{ form.correo.label_tag }}
+                                {{ form.correo }}
+                                {{ form.correo.errors }}
+                            </div>
+                            <div class="col-md-6">
+                                {{ form.paginaWeb.label_tag }}
+                                {{ form.paginaWeb }}
+                                {{ form.paginaWeb.errors }}
+                            </div>
+                        </div>
+
+                        <hr>
+                        <div class="row">
+                            <h6>Horario de atención</h6>
+                            <div class="col-md-6">
+                                {{ form.horarioInicio.label_tag }}
+                                {{ form.horarioInicio }}
+                                {% if form.horarioInicio.errors %}
+                                  <div class="error-msg">{{ form.horarioInicio.errors }}</div>
+                                {% endif %}
+                            </div>
+
+                            <div class="col-md-6">
+                                {{ form.horarioFin.label_tag }}
+                                {{ form.horarioFin }}
+                                {% if form.horarioFin.errors %}
+                                  <div class="error-msg">{{ form.horarioFin.errors }}</div>
+                                {% endif %}
+                            </div>
+                        </div>
+
+                        <hr>
+                        <!-- Dirección -->
+                        <div>
+                            <h5>Dirección</h5>
+                            <div>
+                                <div class="row">
+                                    <p>¿Desea reutilizar alguna dirección?</p>
+                                    <div class="form-check">
+                                        <input
+                                            type="checkbox"
+                                            class="form-check-input"
+                                            id="mismaDireccion"
+                                        >
+                                        <label class="form-check-label" for="mismaDireccion">
+                                            La dirección es la misma que la del Responsable : {{ directorio }}
+                                        </label>
+                                        <div
+                                            id="direccionResponsable"
+                                            data-calle="{{ responsable.calle_responsable }}"
+                                            data-numext="{{ responsable.numExt_responsable }}"
+                                            data-numint="{{ responsable.numInt_responsable }}"
+                                            data-colonia="{{ responsable.colonia_responsable }}"
+                                            data-municipio="{{ responsable.municipio_responsable_id }}"
+                                            data-estado="{{ responsable.entidadFed_responsable_id }}"
+                                            data-codigopostal="{{ responsable.codigoPost_responsable }}"
+                                        ></div>
+                                    </div>
+                                    {% if directorio1 %}
+                                        <div class="form-check">
+                                            <input
+                                                type="checkbox"
+                                                class="form-check-input"
+                                                id="mismaDireccion1"
+                                            >
+                                            <label class="form-check-label" for="mismaDireccion1">
+                                                La dirección es la misma que la de la Unidad Responsable : {{ directorio1 }}
+                                            </label>
+                                            <div
+                                                id="direccionResponsable1"
+                                                data-calle="{{ responsable1.calle_unidadresp }}"
+                                                data-numext="{{ responsable1.numExt_unidadresp }}"
+                                                data-numint="{{ responsable1.numInt_unidadresp }}"
+                                                data-colonia="{{ responsable1.colonia_unidadresp }}"
+                                                data-municipio="{{ responsable1.municipio_unidadresp_id }}"
+                                                data-estado="{{ responsable1.entidadFed_unidadresp_id }}"
+                                                data-codigopostal="{{ responsable1.codigoPost_unidadresp }}"
+                                            >
+
+                                            </div>
+                                        </div>
+                                    {% endif %}
+                                </div>
+                            </div>
+                            <div> <!--Container calle & Num interior & Num exterior-->
+                                <div class="row">
+                                    <div class="col-6"> <!--Label-->
+                                        {{ form.calle_ut.label_tag }}
+                                    </div>
+                                    <div class="col-3">
+                                        {{ form.numExt_ut.label_tag }}
+                                    </div>
+                                    <div class="col-3">
+                                        {{ form.numInt_ut.label_tag }}
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-6"> <!--Input-->
+                                        {{ form.calle_ut }}
+                                    </div>
+                                    <div class="col-3">
+                                        {{ form.numExt_ut }}
+                                    </div>
+                                    <div class="col-3">
+                                        {{ form.numInt_ut }}
+                                    </div>
+                                </div>
+                                <div class="row"> <!--Errores-->
+                                    <div class="col-6">
+                                        {{ form.calle_ut.errors }}
+                                    </div>
+                                    <div class="col-3">
+                                        {{ form.numExt_ut.errors }}
+                                    </div>
+                                    <div class="col-3">
+                                        {{ form.numInt_ut.errors }}
+                                    </div>
+                                </div>
+                            </div>
+                            <div> <!--Container colonia & municipio-->
+                                <div class="row">
+                                    <div class="col-6">
+                                        {{ form.colonia_ut.label_tag }}
+
+                                    </div>
+                                    <div class="col-6">
+                                        {{ form.municipio_ut.label_tag }}
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-6">
+                                        {{ form.colonia_ut }}
+
+                                    </div>
+                                    <div class="col-6">
+                                        {{ form.municipio_ut }}
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-6">
+                                        {{ form.colonia_ut.errors }}
+
+                                    </div>
+                                    <div class="col-6">
+                                        {{ form.municipio_ut.errors }}
+                                    </div>
+                                </div>
+                            </div>
+                            <div> <!--Container entidad federativa & CP-->
+                                <div class="row">
+                                    <div class="col-6">
+                                        {{ form.entidadFed_ut.label_tag }}
+
+                                    </div>
+                                    <div class="col-6">
+                                        {{ form.codigoPost_ut.label_tag }}
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-6">
+                                        {{ form.entidadFed_ut }}
+
+                                    </div>
+                                    <div class="col-6">
+                                        {{ form.codigoPost_ut }}
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-6">
+                                        {{ form.entidadFed_ut.errors }}
+
+                                    </div>
+                                    <div class="col-6">
+                                        {{ form.codigoPost_ut.errors }}
+                                    </div>
+                                </div>
+                            </div>
+                            <br>
+                        </div>
+
+                        <hr>
+
+                        <div class="row justify-content-end">
+                            <div class="col-3">
+                                <button type="button" id="btnLimpiar" class="btn btn-custom">
+                                    Limpiar campos
+                                </button>
+                            </div>
+                        </div>
+                </div>
+
+                {{ form.errors }}
+            </div>
+
+            <div class="btns-div">
+                <button class="btn btn-custom" type="submit">Siguiente</button>
+            </div>
+            
+            </form>
+        </div>
+        <!-- Sidebar -->
+        <div class="col-md-5 col-lg-4 bg-light border-start" id="sidebar">
+            <br><br><br><br>
+            <div class="collapse show" id="sidebarContent">
+                <p class="texto-justificado">
+                    <b>Unidad de Transparencia:</b> Instancia a la que hace referencia el artículo 41 de la Ley General de Transparencia y Acceso a la Información Pública.
+                    <br><br>
+                    El aviso de privacidad deberá contener, al menos, la siguiente información: (Artículo 21.)
+                    <br><br>
+                    <b>VI. El domicilio de la Unidad de Transparencia;</b>
+                    <br><br>
+                    La unidad de transparencia es la oficina dentro de una institución pública que recibe y responde las peticiones de información de las personas.
+                    <br><br>
+                    La Unidad de Transparencia es el área administrativa dentro de cualquier institución pública (o sujeto obligado) que funciona como el enlace directo entre la ciudadanía y la dependencia para garantizar el derecho a saber qué hace el gobierno.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

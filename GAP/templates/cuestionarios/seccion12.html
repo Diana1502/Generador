@@ -1,0 +1,134 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div>
+    <h3>Cuestionario</h3>
+    <div class="row">
+        <!-- Content -->
+        <div class="col-md-7 col-lg-8 p-3">
+            <!-- Nav Pills -->
+            <ul class="nav nav-tabs nav-justified">
+                {% for i in "123456789101" %}
+                <li class="nav-item">
+                    <a class="nav-link"
+                       data-section="{{ forloop.counter }}"
+                       href="{% url 'apps.cuestionarios:seccion' cuestionario.id forloop.counter %}">
+                       {{ forloop.counter }}
+                    </a>
+                </li>
+                {% endfor %}
+            </ul>
+
+            <br>
+            <!-- Tab Content -->
+            <form method="post">
+                {% csrf_token %}
+
+                <div class="card mb-4">
+                    <div class="card-header">Información Complementaria</div>
+                    <div class="card-body contenedor-grid noto-sans">
+
+                        <div class="row">
+                            <div class="col-1">
+                                {{ form.desicNotHuman }}
+                            </div>
+                            <div class="col-11">
+                                {{ form.desicNotHuman.label_tag }}
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-1">
+                                {{ form.usoNube }}
+                            </div>
+                            <div class="col-11">
+                                {{ form.usoNube.label_tag }}
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-1">
+                                {{ form.encargadosTrat }}
+                            </div>
+                            <div class="col-11">
+                                {{ form.encargadosTrat.label_tag }}
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-1">
+                                {{ form.remisiones }}
+                            </div>
+                            <div class="col-11">
+                                {{ form.remisiones.label_tag }}
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-1">
+                                {{ form.menorEdad }}
+                            </div>
+                            <div class="col-11">
+                                {{ form.menorEdad.label_tag }}
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-1">
+                                {{ form.biometricos }}
+                            </div>
+                            <div class="col-11">
+                                {{ form.biometricos.label_tag }}
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-1">
+                                {{ form.evalImpacto }}
+                            </div>
+                            <div class="col-11">
+                                {{ form.evalImpacto.label_tag }}
+                            </div>
+                        </div>
+
+                        <br><hr>
+
+                        {{ form.observaciones.label_tag }}
+                        {{ form.observaciones }}
+
+                        <hr>
+
+                        <div class="row justify-content-end">
+                            <div class="col-3">
+                                <button type="button" id="btnLimpiar" class="btn btn-custom">
+                                    Limpiar campos
+                                </button>
+                            </div>
+                        </div>
+
+                </div>
+
+                {{ form.errors }}
+            </div>
+
+            <div class="btns-div">
+                <button class="btn btn-custom" type="submit">Guardar</button>
+            </div>
+            
+            </form>
+        </div>
+        <!-- Sidebar -->
+        <div class="col-md-5 col-lg-4 bg-light border-start" id="sidebar">
+            <br><br><br><br>
+            <div class="collapse show" id="sidebarContent">
+                <p class="texto-justificado">
+                    Cuando el responsable utilice mecanismos en medios remotos o locales de comunicación electrónica, óptica u otra tecnología, que le permitan recabar datos personales de manera automática y simultánea al tiempo que el titular hace contacto con los mismos, en ese momento deberá informar al titular, a través de una comunicación o advertencia colocada en un lugar visible, sobre el uso de esas tecnologías y sobre el hecho de que a través de las mismas se obtienen datos personales, así como la forma en que se podrán deshabilitar, esto último salvo que dichas tecnologías sean necesarias por motivos técnicos.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

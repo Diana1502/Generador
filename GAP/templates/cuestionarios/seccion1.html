@@ -1,0 +1,203 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div>
+    <h3>Cuestionario</h3>
+    <div class="row">
+        <!-- Content -->
+        <div class="col-md-7 col-lg-8 p-3">
+            <!-- Nav Pills -->
+            <ul class="nav nav-tabs nav-justified">
+                {% for i in "123456789101" %}
+                <li class="nav-item">
+                    <a class="nav-link"
+                       data-section="{{ forloop.counter }}"
+                       href="{% url 'apps.cuestionarios:seccion' cuestionario.id forloop.counter %}">
+                       {{ forloop.counter }}
+                    </a>
+                </li>
+                {% endfor %}
+            </ul>
+
+            <br>
+            <!-- Tab Content -->
+            <form method="post">
+                {% csrf_token %}
+
+                <div class="card mb-4">
+                    <div class="card-header">I. Denominación y domicilio del responsable /¿Quién es el responsable del tratamiento de los datos personales?</div>
+                    <div class="card-body contenedor-grid noto-sans">
+
+                        <h5>Sujeto obligado</h5>
+
+                        <label>¿Cuál es el <strong>nombre</strong>?</label>
+                        {{ sujetoObligado }}
+                        <br>
+
+                        {{ form.acronSujetoObligado.label_tag }}
+                        {{ form.acronSujetoObligado }}
+
+                        <hr>
+
+                        <h5>Unidad Administrativa</h5>
+
+                        {{ form.unidadAdmin.label_tag }}
+                        {{ form.unidadAdmin }}
+
+                        {{ form.acronUnidadAdmin.label_tag }}
+                        {{ form.acronUnidadAdmin }}
+
+                        <hr>
+
+                        <!-- Dirección -->
+                        <div>
+                            <h5>Dirección del responsable</h5>
+                            <div> <!--Container calle & Num interior & Num exterior-->
+                                <div class="row">
+                                    <div class="col-6"> <!--Label-->
+                                        {{ form.calle_responsable.label_tag }}
+                                    </div>
+                                    <div class="col-3">
+                                        {{ form.numExt_responsable.label_tag }}
+                                    </div>
+                                    <div class="col-3">
+                                        {{ form.numInt_responsable.label_tag }}
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-6"> <!--Input-->
+                                        {{ form.calle_responsable }}
+                                    </div>
+                                    <div class="col-3">
+                                        {{ form.numExt_responsable }}
+                                    </div>
+                                    <div class="col-3">
+                                        {{ form.numInt_responsable }}
+                                    </div>
+                                </div>
+                                <div class="row"> <!--Errores-->
+                                    <div class="col-6">
+                                        {{ form.calle_responsable.errors }}
+                                    </div>
+                                    <div class="col-3">
+                                        {{ form.numExt_responsable.errors }}
+                                    </div>
+                                    <div class="col-3">
+                                        {{ form.numInt_responsable.errors }}
+                                    </div>
+                                </div>
+                            </div>
+                            <div> <!--Container colonia & municipio-->
+                                <div class="row">
+                                    <div class="col-6">
+                                        {{ form.colonia_responsable.label_tag }}
+
+                                    </div>
+                                    <div class="col-6">
+                                        {{ form.municipio_responsable.label_tag }}
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-6">
+                                        {{ form.colonia_responsable }}
+
+                                    </div>
+                                    <div class="col-6">
+                                        {{ form.municipio_responsable }}
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-6">
+                                        {{ form.colonia_responsable.errors }}
+
+                                    </div>
+                                    <div class="col-6">
+                                        {{ form.municipio_responsable.errors }}
+                                    </div>
+                                </div>
+                            </div>
+                            <div> <!--Container entidad federativa & CP-->
+                                <div class="row">
+                                    <div class="col-6">
+                                        {{ form.entidadFed_responsable.label_tag }}
+
+                                    </div>
+                                    <div class="col-6">
+                                        {{ form.codigoPost_responsable.label_tag }}
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-6">
+                                        {{ form.entidadFed_responsable }}
+
+                                    </div>
+                                    <div class="col-6">
+                                        {{ form.codigoPost_responsable }}
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-6">
+                                        {{ form.entidadFed_responsable.errors }}
+
+                                    </div>
+                                    <div class="col-6">
+                                        {{ form.codigoPost_responsable.errors }}
+                                    </div>
+                                </div>
+                            </div>
+                            <br>
+<!--                            <label>-->
+<!--                                <input type="checkbox" name="direccionNotificacion" required> -->
+<!--                                <strong>Esta dirección estará designada para oír y recibir notificaciones</strong>-->
+<!--                            </laobel>-->
+
+                        </div>
+
+                        <hr>
+
+                        <div class="row justify-content-end">
+                            <div class="col-3">
+                                <button type="button" id="btnLimpiar" class="btn btn-custom">
+                                    Limpiar campos
+                                </button>
+                            </div>
+                        </div>
+
+                </div>
+
+                {{ form.errors }}
+            </div>
+
+            <div class="btns-div">
+                <button class="btn btn-custom" type="submit">Siguiente</button>
+            </div>
+
+            </form>
+        </div>
+        <!-- Sidebar -->
+        <div class="col-md-5 col-lg-4 bg-light border-start" id="sidebar">
+            <br><br><br><br>
+            <div class="collapse show" id="sidebarContent">
+                <p class="texto-justificado">
+                    <strong>Aviso de privacidad: </strong>Documento a disposición de la persona titular de la información de forma física, electrónica o en cualquier formato generado por el responsable, a partir del momento en el cual se recaben sus datos personales, con el objeto de informarle los propósitos del tratamiento de los mismos;
+                    <br>
+                    El aviso de privacidad tiene por objeto informar al titular sobre los alcances y condiciones generales del tratamiento a que serán sometidos sus datos personales, a fin de que esté en posibilidad de tomar decisiones informadas sobre el uso de éstos y, en consecuencia, mantener el control y disposición de los mismos.
+                    <br>
+                    El aviso de privacidad deberá contener, al menos, la siguiente información: <b>(Artículo 21)</b>
+                    <br><br>
+                    <b>I. La denominación y el domicilio del responsable;</b>
+                    <br>
+                    <b>Responsable:</b> Sujetos obligados a que se refiere la fracción XXVII del presente artículo que deciden sobre el tratamiento de datos personales;
+                    <br>
+                    <b>Sujetos Obligados:</b> Cualquier autoridad, entidad, órgano y organismo de los poderes ejecutivo, legislativo y judicial, órganos autónomos, partidos políticos, fideicomisos y fondos públicos, en el ámbito federal, estatal y municipal o de las demarcaciones territoriales de la Ciudad de México;
+                    <br>
+                    <b>Siglas:</b> Abreviación gráfica formada por el conjunto de letras iniciales de una expresión compleja.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

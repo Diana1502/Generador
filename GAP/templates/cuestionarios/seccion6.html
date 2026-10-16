@@ -1,0 +1,233 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container mt-5">
+    <h3>Cuestionario</h3>
+    <div class="row">
+        <!-- Content -->
+        <div class="col-md-7 col-lg-8 p-3">
+            <!-- Nav Pills -->
+            <ul class="nav nav-tabs nav-justified">
+                {% for i in "123456789101" %}
+                <li class="nav-item">
+                    <a class="nav-link"
+                       data-section="{{ forloop.counter }}"
+                       href="{% url 'apps.cuestionarios:seccion' cuestionario.id forloop.counter %}">
+                       {{ forloop.counter }}
+                    </a>
+                </li>
+                {% endfor %}
+            </ul>
+
+            <br>
+            <!-- Tab Content -->
+            <form method="post">
+                {% csrf_token %}
+
+                <div class="card mb-4">
+                    <div class="card-header">V. Medios y procedimientos disponibles para ejercer los derechos de Acceso, Rectificación, Cancelación u Oposición. /¿Dónde está ubicada la Unidad y Transparencia? ¿Ante quién se realiza el ejercicio de los Derechos ARCO?</div>
+                    <div class="card-body contenedor-grid">
+                        <h5>Ejercicio de los derechos ARCO</h5>
+                        <p>Describa el <b>procedimiento</b> para la <b>solicitud de derechos ARCO</b>.</p>
+                        {{ form.procARCO }}
+
+                        <br>
+                        <p>Indique los medios de presentación</p>
+                        {{ form.medPresentacion }}
+
+                        <hr>
+                        <div class="row">
+                            <h5>Unidad responsable</h5>
+                            <div class="col-md-6">
+                                <label>{{form.unidadResp.label}}</label>
+                                {{ form.unidadResp }}
+                            </div>
+
+                            <div class="col-md-6">
+                                <label>{{ form.correo.label }}</label>
+                                {{ form.correo }}
+                            </div>
+
+                            <div class="col-md-6">
+                                <label>{{ form.telefono.label }}</label>
+                                {{ form.telefono }}
+                            </div>
+
+                            <div class="col-md-6">
+                                <label>{{ form.extension.label }}</label>
+                                {{ form.extension }}
+                            </div>
+                        </div>
+
+                        <hr>
+
+                        <!-- Dirección -->
+                        <div>
+                            <h5>Dirección de la unidad responsable</h5>
+                            <div>
+                                <div class="row">
+                                    <p>¿Desea reutilizar alguna dirección?</p>
+                                    <div class="form-check">
+                                        <input
+                                            type="checkbox"
+                                            class="form-check-input"
+                                            id="mismaDireccion"
+                                        >
+                                        <label class="form-check-label" for="mismaDireccion">
+                                            La dirección es la misma que la del Responsable : {{ directorio }}
+                                        </label>
+
+                                        <div
+                                            id="direccionResponsable"
+                                            data-calle="{{ responsable.calle_responsable }}"
+                                            data-numext="{{ responsable.numExt_responsable }}"
+                                            data-numint="{{ responsable.numInt_responsable }}"
+                                            data-colonia="{{ responsable.colonia_responsable }}"
+                                            data-municipio="{{ responsable.municipio_responsable_id }}"
+                                            data-estado="{{ responsable.entidadFed_responsable_id }}"
+                                            data-codigopostal="{{ responsable.codigoPost_responsable }}"
+                                        ></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div> <!--Container calle & Num interior & Num exterior-->
+                                <div class="row">
+                                    <div class="col-6"> <!--Label-->
+                                        {{ form.calle_unidadresp.label_tag }}
+                                    </div>
+                                    <div class="col-3">
+                                        {{ form.numExt_unidadresp.label_tag }}
+                                    </div>
+                                    <div class="col-3">
+                                        {{ form.numInt_unidadresp.label_tag }}
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-6"> <!--Input-->
+                                        {{ form.calle_unidadresp }}
+                                    </div>
+                                    <div class="col-3">
+                                        {{ form.numExt_unidadresp }}
+                                    </div>
+                                    <div class="col-3">
+                                        {{ form.numInt_unidadresp }}
+                                    </div>
+                                </div>
+                                <div class="row"> <!--Errores-->
+                                    <div class="col-6">
+                                        {{ form.calle_unidadresp.errors }}
+                                    </div>
+                                    <div class="col-3">
+                                        {{ form.numExt_unidadresp.errors }}
+                                    </div>
+                                    <div class="col-3">
+                                        {{ form.numInt_unidadresp.errors }}
+                                    </div>
+                                </div>
+                            </div>
+                            <div> <!--Container colonia & municipio-->
+                                <div class="row">
+                                    <div class="col-6">
+                                        {{ form.colonia_unidadresp.label_tag }}
+
+                                    </div>
+                                    <div class="col-6">
+                                        {{ form.municipio_unidadresp.label_tag }}
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-6">
+                                        {{ form.colonia_unidadresp }}
+
+                                    </div>
+                                    <div class="col-6">
+                                        {{ form.municipio_unidadresp }}
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-6">
+                                        {{ form.colonia_unidadresp.errors }}
+
+                                    </div>
+                                    <div class="col-6">
+                                        {{ form.municipio_unidadresp.errors }}
+                                    </div>
+                                </div>
+                            </div>
+                            <div> <!--Container entidad federativa & CP-->
+                                <div class="row">
+                                    <div class="col-6">
+                                        {{ form.entidadFed_unidadresp.label_tag }}
+
+                                    </div>
+                                    <div class="col-6">
+                                        {{ form.codigoPost_unidadresp.label_tag }}
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-6">
+                                        {{ form.entidadFed_unidadresp }}
+
+                                    </div>
+                                    <div class="col-6">
+                                        {{ form.codigoPost_unidadresp }}
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-6">
+                                        {{ form.entidadFed_unidadresp.errors }}
+
+                                    </div>
+                                    <div class="col-6">
+                                        {{ form.codigoPost_unidadresp.errors }}
+                                    </div>
+                                </div>
+                            </div>
+                            <br>
+                        </div>
+                        <hr>
+
+                        <div class="row justify-content-end">
+                            <div class="col-3">
+                                <button type="button" id="btnLimpiar" class="btn btn-custom">
+                                    Limpiar campos
+                                </button>
+                            </div>
+                        </div>
+                </div>
+
+                {{ form.errors }}
+            </div>
+
+            <div class="btns-div">
+                <button class="btn btn-custom" type="submit">Siguiente</button>
+            </div>
+            
+            </form>
+        </div>
+        <!-- Sidebar -->
+        <div class="col-md-5 col-lg-4 bg-light border-start" id="sidebar">
+            <br><br><br><br>
+            <div class="collapse show" id="sidebarContent">
+                <p class="texto-justificado">
+                    El aviso de privacidad deberá contener, al menos, la siguiente información: <b>(Artículo 21)</b>
+                    <br><br>
+                    <b>V. Los mecanismos, medios y procedimientos disponibles para ejercer los derechos ARCO;</b>
+                    <br><br>
+                    Derechos ARCO: Derechos de acceso, rectificación, cancelación y oposición al tratamiento de datos personales;
+                    <br>
+                    <b>Derecho de Acceso</b> Es el derecho que tiene el titular de solicitar el acceso a sus datos personales que se encuentran en las bases de datos, sistemas, archivos, registros o expedientes del responsable que los posee, almacena o utiliza, así como de conocer información relacionada con el tratamiento que se da a su información personal.
+                    <br>
+                    <b>Derecho de Rectificación</b> Es el derecho que tiene el titular de solicitar la rectificación o corrección de sus datos personales, cuando éstos sean inexactos o incompletos o no se encuentren actualizados. En otras palabras, puede solicitar a quien posea o utilice sus datos personales que los corrija cuando los mismos sean incorrectos, desactualizados o inexactos.
+                    <br>
+                    <b>Derecho de Cancelación</b> Es el derecho que tienen los titulares de solicitar que sus datos personales se eliminen de los archivos, registros, expedientes, sistemas, bases de datos del responsable que los trata. Aunque hay que tomar en cuenta que no en todos los casos se podrán eliminar sus datos personales, principalmente cuando sean necesarios por alguna cuestión legal o para el cumplimiento de obligaciones.
+                    <br>
+                    <b>Derecho de Oposición</b> Es el derecho que tiene el titular de solicitar que sus datos personales no se utilicen para una determinada finalidad, no para la totalidad de estas. También en este caso, como en el anterior, no siempre se podrá impedir el uso de los datos, cuento estos sean necesarios por motivos legales o para el cumplimiento de obligaciones.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

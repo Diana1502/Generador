@@ -1,0 +1,104 @@
+
+/* Ajustes para que los interruptores se vean alineados y limpios */
+.form-check.form-switch {
+    padding-left: 2.8em;
+    min-height: 1.5rem;
+}
+
+.form-check-input {
+    cursor: pointer;
+    border-color: #11312c;
+}
+
+.form-check-label {
+    cursor: pointer;
+    font-weight: 500;
+    color: #333;
+    padding-top: 2px;
+}
+
+/* Cambiar el color de enfoque/activación si no quieres el azul por defecto de Bootstrap */
+.form-check-input:checked {
+    background-color: #45fbd6; /* Cambia por tu color corporativo */
+    border-color: #45fbd6;
+
+input[type="text"],
+input[type="url"] ,
+.input-style{
+    display: block;
+    width: 100%;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: var(--bs-body-color);
+    appearance: none;
+    background-color: var(--bs-body-bg);
+    background-clip: padding-box;
+    border: var(--bs-border-width) solid var(--bs-border-color);
+    border-radius: var(--bs-border-radius);
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+/* Tres tamaños */
+.input-pequeno {
+    width: 25% !important;
+}
+
+.input-mediano {
+    width: 50% !important;
+}
+
+.input-grande {
+    width: 100% !important;
+}
+
+input[type="text"], input[type="url"] {
+    display: block;
+    width: 100%;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: var(--bs-body-color);
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: var(--bs-body-bg);
+    background-clip: padding-box;
+    border: var(--bs-border-width) solid var(--bs-border-color);
+    border-radius: var(--bs-border-radius);
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+input[type="text"], select {
+  width: 200px;   /* ancho del select */
+  height: 40px;   /* alto del select */
+  border-radius: var(--bs-border-radius);
+}
+
+select {
+    display: block;
+    width: 100%;
+    padding: .375rem 2.25rem .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: var(--bs-body-color);
+    background-color: var(--bs-body-bg);
+    background-clip: padding-box;
+    border: var(--bs-border-width) solid var(--bs-border-color);
+    border-radius: var(--bs-border-radius);
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+    cursor: pointer;
+}
+
+select:hover {
+    border-color: #45fbd6;
+}
+
+select:focus {
+    border-color: #45fbd6;
+    outline: 0;
+    box-shadow: 0 0 0 .25rem rgba(69, 251, 214, .25);
+}

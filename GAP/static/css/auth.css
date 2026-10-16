@@ -1,0 +1,162 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Patria', sans-serif;
+}
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+@font-face {
+    font-family: 'Patria';
+    font-style: normal;
+    font-weight: 400;
+    src: url("https://framework-gb.cdn.gob.mx/applications/cms/fonts/Patria_Regular.otf") format("opentype");
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+.btn-initial {
+    font-family: "Patria", "Noto Sans", "Helvetica", "Arial", sans-serif;
+}
+
+/* Fondo */
+body {
+    height: 100vh;
+    background: linear-gradient(135deg, #004740, #45fbd6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Contenedores *
+.auth-container {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    width: 50%;
+    max-width: 400px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 0.6s ease-in-out;
+}*/
+.auth-container {
+    padding: 2rem;
+    width: 55%;
+    /*max-width: 400px;*/
+    animation: fadeIn 0.6s ease-in-out;
+    position: absolute; /* importante para poder ubicarlo */
+    top: 50%; /* centrado vertical */
+    transform: translateY(-50%); /* ajuste para centrar */
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    right: 10%;
+}
+
+.img-container {
+    padding: 2rem;
+    width: 30%;
+    max-width: 600px;
+    animation: fadeIn 0.6s ease-in-out;
+    position: absolute; /* importante para poder ubicarlo */
+    top: 50%; /* centrado vertical */
+    transform: translateY(-50%); /* ajuste para centrar */
+    left: 5%; /* margen desde el borde izquierdo */
+}
+
+.img-container img {
+    width: 100%;       /* ocupa todo el ancho del contenedor */
+    height: auto;      /* mantiene la proporción original */
+    display: block;    /* elimina espacios extra alrededor */
+    object-fit: cover;
+}
+
+/* Animación */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Título */
+.auth-container h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #333;
+}
+
+/* Inputs */
+.auth-container input {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    outline: none;
+    transition: 0.3s;
+}
+
+/* Focus input */
+.auth-container input:focus {
+    border-color: #667eea;
+    box-shadow: 0 0 5px rgba(102, 126, 234, 0.5);
+}
+
+/* Botón */
+.auth-container button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+    background: #11312c;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+/* Hover botón */
+.auth-container button:hover {
+    background: #45fbd6;
+}
+
+/* Links */
+.auth-container a {
+    display: block;
+    text-align: center;
+    margin-top: 1rem;
+    color: #11312c;
+    text-decoration: none;
+}
+
+.auth-container a:hover {
+    text-decoration: underline;
+}
+
+/* Mensajes */
+.auth-container .message {
+    background: #e6fffa;
+    color: #065f46;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+label {
+  display: inline-flex;       /* coloca checkbox y texto en línea */
+  align-items: center;        /* alinea verticalmente */
+  cursor: pointer;            /* da sensación de botón clickeable */
+  white-space: nowrap;
+  color: #333;                /* color más suave que el negro puro */
+}
+
+label input[type="checkbox"] {
+  margin-right: 0.5rem;       /* espacio entre checkbox y texto */
+  accent-color: #0078D4;      /* color moderno para el check (soportado en navegadores recientes) */
+}
+

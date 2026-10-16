@@ -1,0 +1,176 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card alerta-borde-rojo">
+                <div class="card-header">¡Importante!</div>
+                <div class="card-body">
+                    La obtención de un texto de Aviso de Privacidad generado con la herramienta Generador de Avisos de Privacidad (GAP) desarrollada por la Secretaría Anticorrupción y Buen Gobierno, no constituye una revisión, autorización, certificación, ni validación del cumplimiento de los principios, deberes u obligaciones establecidos en la Ley General de Protección de Datos Personales en Posesión de Sujetos Obligados.
+                    <br> <br>
+                    La herramienta genera documentos con la información y textos provistos por el sujeto obligado por lo que su contenido es responsabilidad de éste.
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row mt-2">
+        <div class="col-9">
+            <h1>Generador de Avisos de Privacidad</h1>
+            <p class="text-muted">
+                Espacio para la descripción del sitio web.
+            </p>
+        </div>
+        <div class="col-3">
+            <div class="row">
+                <button type="button"
+                        class="btn btn-custom size-lrg d-flex align-items-center justify-content-center p-100 w-100 h-100"
+                        data-bs-toggle="modal" data-bs-target="#myModal">
+                    <i class="bi bi-file-earmark-plus"></i> Crear
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="myModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title">Crear aviso de privacidad</h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+
+                <form method="post" action="{% url 'apps.cuestionarios:nuevoAvP' %}" >
+                    {% csrf_token %}
+                    <!-- Modal body -->
+                    <div class="modal-body" id="surname-born">
+                        <p>Introduce un nombre para identificar tu aviso de privacidad.</p>
+                        {{ form.nickname }}
+                    </div>
+
+                    <!-- Modal footer -->
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-custom" id="btnEnviar">Enviar</button>
+                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+    
+    <hr>
+    <div class="row">
+        <h2>Mis avisos de privacidad</h2>
+    </div>
+    <div class="row">
+        <div class="table-responsive">
+            <table class="table table-hover align-middle">
+                <thead class="table-light">
+                    <tr>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Fecha de creación</th>
+                        <th scope="col">Descargas</th>
+                        <th scope="col" class="text-end">Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for cuestionario in cuestionarios %}
+                        <tr>
+                            <td class="fw-semibold">{{ cuestionario.nickname }}</td>
+
+                            <td>{{ cuestionario.creado|date:"d \d\e F Y" }}</td>
+
+                            <td>
+                                {% if cuestionario.completado %}
+                                    <div class="d-inline-flex gap-2">
+                                        <a href="/word/integral/{{ cuestionario.id }}/"
+                                           class="btn btn-sm btn-dark d-inline-flex align-items-center gap-1"
+                                           title="Descargar versión integral">
+                                            <i class="bi bi-file-earmark-word-fill"></i>
+                                            <span>Integral</span>
+                                        </a>
+
+                                        <a href="/word/simplificado/{{ cuestionario.id }}/"
+                                           class="btn btn-sm btn-outline-success d-inline-flex align-items-center gap-1"
+                                           title="Descargar versión simplificada">
+                                            <i class="bi bi-file-earmark-text-fill"></i>
+                                            <span>Simplificado</span>
+                                        </a>
+                                    </div>
+                                {% else %}
+                                    <span class="badge bg-light text-muted border fw-normal d-inline-flex align-items-center gap-1">
+                                        <i class="bi bi-clock-history"></i> En proceso
+                                    </span>
+                                {% endif %}
+                            </td>
+
+                            <td class="text-end">
+                                <div class="btn-group" role="group">
+                                    <a href="/aviso-de-privacidad/{{ cuestionario.id }}/continuar/"
+                                       class="btn btn-sm btn-light text-secondary"
+                                       title="Editar">
+                                        <i class="bi bi-pencil-square"></i>
+                                        <span>Editar</span>
+                                    </a>
+                                    <a href="/aviso-de-privacidad/{{ cuestionario.id }}/eliminar/"
+                                       class="btn btn-sm btn-light text-danger"
+                                       title="Eliminar">
+                                        <i class="bi bi-trash-fill"></i>
+                                        <span>Eliminar</span>
+                                    </a>
+                                </div>
+                            </td>
+                        </tr>
+                    {% empty %}
+                        <tr>
+                            <td colspan="4" class="text-center py-4 text-muted">
+                                <i class="bi bi-inbox fs-3 d-block mb-2"></i>
+                                No tienes avisos de privacidad generados aún.
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Controles de paginación -->
+        {% if cuestionarios.has_other_pages %}
+        <div class="d-flex justify-content-between align-items-center mt-3">
+            {% if cuestionarios.has_previous %}
+                <a href="?page={{ cuestionarios.previous_page_number }}" class="btn btn-outline btn-sm">
+                    <i class="bi bi-arrow-left"></i> Anterior
+                </a>
+            {% else %}
+                <button class="btn btn-outline btn-sm" disabled>
+                    <i class="bi bi-arrow-left"></i> Anterior
+                </button>
+            {% endif %}
+
+            <span class="text-muted small">
+                Página {{ cuestionarios.number }} de {{ cuestionarios.paginator.num_pages }}
+            </span>
+
+            {% if cuestionarios.has_next %}
+                <a href="?page={{ cuestionarios.next_page_number }}" class="btn btn-outline btn-sm">
+                    Siguiente <i class="bi bi-arrow-right"></i>
+                </a>
+            {% else %}
+                <button class="btn btn-outline btn-sm" disabled>
+                    Siguiente <i class="bi bi-arrow-right"></i>
+                </button>
+            {% endif %}
+        </div>
+        {% endif %}
+    </div>
+    
+    <div class="row">
+        <div class="col-3">
+            <br><br><br>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

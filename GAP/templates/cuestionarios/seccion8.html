@@ -1,0 +1,247 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container mt-5">
+    <h3>Cuestionario</h3>
+
+    <div class="row">
+        <!-- Content -->
+        <div class="col-md-7 col-lg-8 p-3">
+            <!-- Nav Pills -->
+            <ul class="nav nav-tabs nav-justified">
+                {% for i in "123456789101" %}
+                <li class="nav-item">
+                    <a class="nav-link"
+                       data-section="{{ forloop.counter }}"
+                       href="{% url 'apps.cuestionarios:seccion' cuestionario.id forloop.counter %}">
+                       {{ forloop.counter }}
+                    </a>
+                </li>
+                {% endfor %}
+            </ul>
+
+            <br>
+            <!-- Tab Content -->
+            <form method="post">
+                {% csrf_token %}
+
+                <div class="card mb-4">
+                    <div class="card-header">VII. Transferencias de datos personales /¿A quién se transfieren los datos personales?</div>
+                    <div class="card-body contenedor-grid">
+                        <div class="row">
+                            <h5>Destinatario</h5>
+                            <div class="col-md-6">
+                                 <label>
+                                    Nombre
+                                </label>
+                                <input type="text" id="destinatario" class="form-control">
+                            </div>
+                            <div class="col-md-6">
+                                <label>
+                                    Tipo de destinatario
+                                </label>
+                                <select id="tipoConsentimiento" class="form-select">
+                                    <option value="A">Entidad o Dependencia de la APF</option>
+                                    <option value="F">Entidad Federativa</option>
+                                    <option value="M">Municipio</option>
+                                    <option value="G">Organismo Autónomo</option>
+                                    <option value="P">Particular</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <hr>
+
+                        <div class="row">
+                            <h5>Consentimiento</h5>
+                            <div class="col-md-6">
+                                <label>
+                                    ¿Requiere consentimiento?
+                                </label>
+                                <select id="consentimiento" class="form-select">
+                                    <option value="true">
+                                        Sí
+                                    </option>
+                                    <option value="false">
+                                        No
+                                    </option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <hr>
+
+                        <div class="row">
+                            <h5>Finalidades</h5>
+                            {% for f in finalidades %}
+                                <div class="row">
+                                    <div class="col-1">
+                                        <input type="checkbox" value="{{ f.id }}" class="finalidadCheck form-check-input">
+                                    </div>
+                                    <div class="col-6">
+                                        <label>
+                                            {{ f.finalidad }}
+                                        </label>
+                                    </div>
+                                    <div class="col-1">
+                                        {% if f.finPrincipal %}
+                                            <span class="badge bg-success">
+                                            Primaria
+                                            </span>
+                                        {% else %}
+                                            <span class="badge bg-secondary">
+                                            Secundaria
+                                            </span>
+                                        {% endif %}
+                                    </div>
+                                    <div class="col-1">
+                                        {% if f.necesaria %}
+                                            <span class="badge bg-primary">
+                                            Necesaria
+                                            </span>
+                                        {% endif %}
+                                    </div>
+                                    <div class="col-1">
+                                        {% if f.reqConsentimiento %}
+                                            <span class="badge bg-info">
+                                            Requiere consentimiento
+                                            </span>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        </div>
+
+                        <hr>
+
+                        <div class="row justify-content-end">
+                            <div class="col-2">
+                                <button type="button" id="btnAgregar" class="btn btn-custom">
+                                    Agregar
+                                </button>
+                            </div>
+
+                            <div class="col-3">
+                                <button type="button" id="btnLimpiar" class="btn btn-custom">
+                                    Limpiar campos
+                                </button>
+                            </div>
+
+                            <div class="col-3">
+                                <button type="button" id="btnModificar" class="btn btn-custom">
+                                    Guardar cambios
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="btns-div">
+                    <button class="btn btn-custom" type="submit">Siguiente</button>
+                </div>
+
+                <br>
+            
+            </form>
+
+            <div class="card mb-4">
+                <div class="card-body">
+                    <table class="table table-bordered align-middle">
+                        <thead class="table-light">
+                                <tr>
+                                    <th>Destinatario</th>
+                                    <th>Finalidades</th>
+                                    <th>¿Requiere consentimiento?</th>
+                                    <th>Acción</th>
+                                </tr>
+                        </thead>
+                        <tbody id="tablaTercerosInv">
+
+                            {% for tercero in destinatarios %}
+
+                                <tr id="terceroInv-{{ tercero.id }}">
+
+                                    <td>
+                                        <p>{{ tercero.destinatario }}</p>
+                                        <span class="badge bg-info">
+                                        {{ tercero.get_tipoConsentimiento_display }}
+                                        </span>
+                                    </td>
+
+                                    <td>
+                                        {% for f in tercero.finalidad.all %}
+
+                                        <span class="badge bg-secondary">
+
+                                            {{ f.finalidad }}
+
+                                        </span>
+
+                                        {% endfor %}
+
+                                    </td>
+
+                                    <td>
+                                        <p>
+                                        {% if tercero.consentimiento %}
+                                            Sí
+                                        {% else %}
+                                            No
+                                        {% endif %}
+                                        </p>
+                                    </td>
+
+                                    <td>
+
+                                        <button class="btn btn-danger btnEliminar"
+                                                data-id="{{ tercero.id }}">
+                                            Eliminar
+                                        </button>
+
+                                        <br><br>
+
+                                        <button class="btn btn-warning btnEditar"
+                                                data-id="{{ tercero.id }}">
+                                            Editar
+                                        </button>
+
+                                    </td>
+
+                                </tr>
+
+                            {% endfor %}
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+        <!-- Sidebar -->
+        <div class="col-md-5 col-lg-4 bg-light border-start" id="sidebar">
+            <br><br><br><br>
+            <div class="collapse show" id="sidebarContent">
+                <p class="texto-justificado">
+                    El aviso de privacidad deberá contener, al menos, la siguiente información: <b>(Artículo 21.)</b>
+                    <br><br>
+                    <b>VII. Cuando se realicen transferencias de datos personales que requieran consentimiento, se deberá informar:</b>
+                    <br>
+                    <b>a) Las autoridades, poderes, entidades, órganos y organismos gubernamentales de los tres órdenes de gobierno y las personas físicas o morales a las que se transfieren los datos personales, y</b>
+                    <br>
+                    <b>b) Las finalidades de estas transferencias;</b>
+
+                    <br><br>
+                    <b>Transferencia:</b> Toda comunicación de datos personales dentro o fuera del territorio mexicano, realizada a persona distinta de la titular, del responsable o de la persona encargada;
+                    <br><br>
+                    Toda transferencia de datos personales, sea esta nacional o internacional, se encuentra sujeta al consentimiento de la persona titular, salvo las excepciones previstas en los artículos 16, 60 y 64 de esta Ley. <b>(Artículo 59)</b>
+                    <br><br>
+                    Toda transferencia deberá formalizarse mediante la suscripción de cláusulas contractuales, convenios de colaboración o cualquier otro instrumento jurídico, de conformidad con la normatividad que le resulte aplicable al responsable, que permita demostrar el alcance del tratamiento de los datos personales, así como las obligaciones y responsabilidades asumidas por las partes. <b>(Artículo 60)</b>
+                    <br><br>
+                    <b>El responsable no estará obligado a informar en el aviso de privacidad sobre las comunicaciones de datos personales que existan entre éste y los encargados, lo que se reconoce como remisión</b>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,928 @@
+[
+  {
+    "nombre": "Poder Ejecutivo Federal",
+    "hijos": [
+      {
+        "nombre": "Administración Pública Centralizada",
+        "hijos": [
+          {"nombre": "Administración del Patrimonio de la Beneficencia Pública"},
+          {"nombre": "Agencia de Transformación Digital y Telecomunicaciones"},
+          {"nombre": "Agencia Federal de Aviación Civil"},
+          {"nombre": "Agencia Mexicana de Cooperación Internacional para el Desarrollo"},
+          {"nombre": "Agencia Nacional de Aduanas de México"},
+          {"nombre": "Agencia Nacional de Seguridad Industrial y de Protección al Medio Ambiente del Sector Hidrocarburos"},
+          {"nombre": "Agencia Reguladora del Transporte Ferroviario"},
+          {"nombre": "Autoridad Educativa Federal en la Ciudad de México"},
+          {"nombre": "Centro de Producción de Programas Informativos y Especiales"},
+          {"nombre": "Centro Nacional de Equidad de Género, Salud Sexual y Reproductiva"},
+          {"nombre": "Centro Nacional de Inteligencia"},
+          {"nombre": "Centro Nacional de la Transfusión Sanguínea"},
+          {"nombre": "Centro Nacional de Prevención de Desastres"},
+          {"nombre": "Centro Nacional de Prevención y Control de Enfermedades"},
+          {"nombre": "Centro Nacional de Trasplantes"},
+          {"nombre": "Centro Nacional para la Prevención y Control del VIH/SIDA y Hepatitis"},
+          {"nombre": "Centro Nacional para la Salud de la Infancia y la Adolescencia"},
+          {"nombre": "Colegio Superior Agropecuario del Estado de Guerrero"},
+          {"nombre": "Comisión de Apelación y Arbitraje del Deporte"},
+          {"nombre": "Comisión Federal para la Protección contra Riesgos Sanitarios"},
+          {"nombre": "Comisión Nacional Bancaria y de Valores"},
+          {"nombre": "Comisión Nacional de Acuacultura y Pesca"},
+          {"nombre": "Comisión Nacional de Arbitraje Médico"},
+          {"nombre": "Comisión Nacional de Áreas Naturales Protegidas"},
+          {"nombre": "Comisión Nacional de Bioética"},
+          {"nombre": "Comisión Nacional de Búsqueda de Personas"},
+          {"nombre": "Comisión Nacional de Energía"},
+          {"nombre": "Comisión Nacional de Mejora Regulatoria"},
+          {"nombre": "Comisión Nacional de Salud Mental y Adicciones"},
+          {"nombre": "Comisión Nacional de Seguridad Nuclear y Salvaguardias"},
+          {"nombre": "Comisión Nacional de Seguros y Fianzas"},
+          {"nombre": "Comisión Nacional del Agua"},
+          {"nombre": "Comisión Nacional del Sistema de Ahorro para el Retiro"},
+          {"nombre": "Comisión Nacional para el Uso Eficiente de la Energía"},
+          {"nombre": "Consejería Jurídica del Ejecutivo Federal"},
+          {"nombre": "Coordinación General de la Comisión Mexicana de Ayuda a Refugiados"},
+          {"nombre": "Coordinación Nacional Antisecuestro y Delitos de Alto Impacto"},
+          {"nombre": "Coordinación Nacional de Becas para el Bienestar Benito Juárez"},
+          {"nombre": "Coordinación para la Atención Integral de la Migración en la Frontera Sur"},
+          {"nombre": "Guardia Nacional"},
+          {"nombre": "Instituto de Administración y Avalúos de Bienes Nacionales"},
+          {"nombre": "Instituto de Mexicanas y Mexicanos en el Exterior"},
+          {"nombre": "Instituto Matías Romero"},
+          {"nombre": "Instituto Mexicano del Transporte"},
+          {"nombre": "Instituto Nacional de Antropología e Historia"},
+          {"nombre": "Instituto Nacional de Bellas Artes y Literatura"},
+          {"nombre": "Instituto Nacional de Estudios Históricos de las Revoluciones de México"},
+          {"nombre": "Instituto Nacional de la Economía Social"},
+          {"nombre": "Instituto Nacional de Migración"},
+          {"nombre": "Instituto Nacional del Derecho de Autor"},
+          {"nombre": "Instituto Nacional para el Federalismo y el Desarrollo Municipal"},
+          {"nombre": "Instituto Politécnico Nacional"},
+          {"nombre": "Oficina de la Presidencia de la República"},
+          {"nombre": "Prevención y Reinserción Social"},
+          {"nombre": "Procuraduría Federal de la Defensa del Trabajo"},
+          {"nombre": "Procuraduría Federal de Protección al Ambiente"},
+          {"nombre": "Radio Educación"},
+          {"nombre": "Registro Agrario Nacional"},
+          {"nombre": "Secretaría Anticorrupción y Buen Gobierno"},
+          {"nombre": "Secretaría de Agricultura y Desarrollo Rural"},
+          {"nombre": "Secretaría de Bienestar"},
+          {"nombre": "Secretaría de Ciencia, Humanidades, Tecnología e Innovación"},
+          {"nombre": "Secretaría de Cultura"},
+          {"nombre": "Secretaría de Desarrollo Agrario, Territorial y Urbano"},
+          {"nombre": "Secretaría de Economía"},
+          {"nombre": "Secretaría de Educación Pública"},
+          {"nombre": "Secretaría de Energía"},
+          {"nombre": "Secretaría de Gobernación"},
+          {"nombre": "Secretaría de Hacienda y Crédito Público"},
+          {"nombre": "Secretaría de Infraestructura, Comunicaciones y Transportes"},
+          {"nombre": "Secretaría de la Defensa Nacional"},
+          {"nombre": "Secretaría de las Mujeres"},
+          {"nombre": "Secretaría de Marina"},
+          {"nombre": "Secretaría de Medio Ambiente y Recursos Naturales"},
+          {"nombre": "Secretaría de Relaciones Exteriores"},
+          {"nombre": "Secretaría de Salud"},
+          {"nombre": "Secretaría de Seguridad y Protección Ciudadana"},
+          {"nombre": "Secretaría de Turismo"},
+          {"nombre": "Secretaría del Trabajo y Previsión Social"},
+          {"nombre": "Secretaría Ejecutiva del Sistema Nacional para la Protección Integral de Niñas, Niños y Adolescentes"},
+          {"nombre": "Secretaría Técnica del Consejo Nacional de Población"},
+          {"nombre": "Secretariado Ejecutivo del Sistema Nacional de Seguridad Pública"},
+          {"nombre": "Servicio de Administración Tributaria"},
+          {"nombre": "Servicio de Protección Federal"},
+          {"nombre": "Servicio Nacional de Inspección y Certificación de Semillas"},
+          {"nombre": "Servicio Nacional de Sanidad, Inocuidad y Calidad Agroalimentaria"},
+          {"nombre": "Servicios a la Navegación en el Espacio Aéreo Mexicano"},
+          {"nombre": "Tecnológico Nacional de México"},
+          {"nombre": "Transparencia para el Pueblo"},
+          {"nombre": "Unidad del Sistema para la Carrera de las Maestras y los Maestros"},
+          {"nombre": "Universidad Abierta y a Distancia de México"},
+          {"nombre": "Universidad Pedagógica Nacional"},
+          {"nombre": "XE-IPN Canal 11"}
+        ]
+      },
+      {
+        "nombre": "Administración Pública Paraestatal",
+        "hijos": [
+          {
+            "nombre": "Organismos descentralizados",
+            "hijos": [
+               {
+                "nombre": "Ramo: Gobernación",
+                "hijos": [
+                  {"nombre": "Consejo Nacional para Prevenir la Discriminación"},
+                  {"nombre": "Talleres Gráficos de México"}
+                ]
+              },
+              {
+                "nombre": "Ramo: Defensa Nacional",
+                "hijos": [
+                  {"nombre": "Instituto de Seguridad Social para las Fuerzas Armadas Mexicanas"}
+                ]
+              },
+              {
+                "nombre": "Ramo: Marina",
+                "hijos": [
+                  {"nombre": "Corredor Interoceánico del Istmo de Tehuantepec"}
+                ]
+              },
+              {
+                "nombre": "Ramo: Hacienda y Crédito Público",
+                "hijos": [
+                  {"nombre": "Casa de Moneda de México"},
+                  {"nombre": "Comisión Nacional para la Protección y Defensa de los Usuarios de Servicios Financieros"},
+                  {"nombre": "Instituto para Devolver al Pueblo lo Robado"},
+                  {"nombre": "Instituto para el Desarrollo Técnico de las Haciendas Públicas"},
+                  {"nombre": "Instituto para la Protección al Ahorro Bancario"},
+                  {"nombre": "Lotería Nacional"}
+                ]
+              },
+              {
+                "nombre": "Ramo: Bienestar",
+                "hijos": [
+                  {"nombre": "Consejo Nacional para el Desarrollo y la Inclusión de las Personas con Discapacidad"},
+                  {"nombre": "Instituto Nacional de las Personas Adultas Mayores"}
+                ]
+              },
+              {
+                "nombre": "Ramo: Medio Ambiente y Recursos Naturales",
+                "hijos": [
+                  {"nombre": "Comisión Nacional Forestal"},
+                  {"nombre": "Instituto Mexicano de Tecnología del Agua"},
+                  {"nombre": "Instituto Nacional de Ecología y Cambio Climático"}
+                ]
+              },
+              {
+                "nombre": "Ramo: Energía",
+                "hijos": [
+                  {"nombre": "Centro Nacional de Control de Energía"},
+                  {"nombre": "Centro Nacional de Control del Gas Natural"},
+                  {"nombre": "Instituto Mexicano del Petróleo"},
+                  {"nombre": "Instituto Nacional de Electricidad y Energías Limpias"},
+                  {"nombre": "Instituto Nacional de Investigaciones Nucleares"},
+                  {"nombre": "Litio para México"}
+                ]
+              },
+              {
+                "nombre": "Ramo: Economía",
+                "hijos": [
+                  {"nombre": "Centro Nacional de Metrología"},
+                  {"nombre": "Instituto Mexicano de la Propiedad Industrial"},
+                  {"nombre": "Procuraduría Federal del Consumidor"},
+                  {"nombre": "Servicio Geológico Mexicano"}
+                ]
+              },
+              {
+                "nombre": "Ramo: Agricultura y Desarrollo Rural",
+                "hijos": [
+                  {"nombre": "Colegio de Postgraduados"},
+                  {"nombre": "Comisión Nacional de las Zonas Áridas"},
+                  {"nombre": "Comité Nacional para el Desarrollo Sustentable de la Caña de Azúcar"},
+                  {"nombre": "Instituto Mexicano de Investigación en Pesca y Acuacultura Sustentables"},
+                  {"nombre": "Instituto Nacional de Investigaciones Forestales, Agrícolas y Pecuarias"},
+                  {"nombre": "Productora de Semillas para el Bienestar \"PROSEBIEN\""},
+                  {"nombre": "Productora Nacional de Biológicos Veterinarios"}
+                ]
+              },
+              {
+                "nombre": "Ramo: Infraestructura, Comunicaciones y Transportes",
+                "hijos": [
+                  {"nombre": "Aeropuertos y Servicios Auxiliares"},
+                  {"nombre": "Caminos y Puentes Federales de Ingresos y Servicios Conexos"},
+                  {"nombre": "Financiera para el Bienestar"},
+                  {"nombre": "Organismo Promotor de Inversiones en Telecomunicaciones"}
+                ]
+              },
+              {
+                "nombre": "Ramo: Educación Pública",
+                "hijos": [
+                  {"nombre": "Centro de Enseñanza Técnica Industrial"},
+                  {"nombre": "Centro de Investigación y de Estudios Avanzados del Instituto Politécnico Nacional"},
+                  {"nombre": "Colegio de Bachilleres"},
+                  {"nombre": "Colegio Nacional de Educación Profesional Técnica"},
+                  {"nombre": "Comisión de Operación y Fomento de Actividades Académicas del Instituto Politécnico Nacional"},
+                  {"nombre": "Comisión Nacional de Cultura Física y Deporte"},
+                  {"nombre": "Comisión Nacional de Libros de Texto Gratuitos"},
+                  {"nombre": "Consejo Nacional de Fomento Educativo"},
+                  {"nombre": "Fondo de Cultura Económica"},
+                  {"nombre": "Instituto Nacional para la Educación de los Adultos"},
+                  {"nombre": "Organismo Coordinador de las Universidades para el Bienestar Benito Juárez García"},
+                  {"nombre": "Patronato de Obras e Instalaciones del Instituto Politécnico Nacional"},
+                  {"nombre": "Universidad de las Lenguas Indígenas de México \"ULIM\""}
+                ]
+              },
+              {
+                "nombre": "Ramo: Ciencia, Humanidades, Tecnologías e Innovación",
+                "hijos": [
+                  {"nombre": "Centro de Ingeniería y Desarrollo Industrial"},
+                  {"nombre": "Centro de Investigación Científica y de Educación Superior de Ensenada, Baja California"},
+                  {"nombre": "Centro de Investigación en Química Aplicada"},
+                  {"nombre": "Centro de Investigaciones y Estudios Superiores en Antropología Social"},
+                  {"nombre": "El Colegio de la Frontera Sur"},
+                  {"nombre": "Instituto de Investigaciones \"Dr. José María Luis Mora\""},
+                  {"nombre": "Instituto Nacional de Astrofísica, Óptica y Electrónica"},
+                  {"nombre": "Universidad Nacional Rosario Castellanos"}
+                ]
+              },
+              {
+                "nombre": "Ramo: Salud",
+                "hijos": [
+                  {"nombre": "Hospital General \"Dr. Manuel Gea González\""},
+                  {"nombre": "Hospital General de México \"Dr. Eduardo Liceaga\""},
+                  {"nombre": "Hospital Infantil de México Federico Gómez"},
+                  {"nombre": "Hospital Juárez de México"},
+                  {"nombre": "Instituto de Salud para el Bienestar"},
+                  {"nombre": "Instituto Nacional de Cancerología"},
+                  {"nombre": "Instituto Nacional de Cardiología Ignacio Chávez"},
+                  {"nombre": "Instituto Nacional de Ciencias Médicas y Nutrición Salvador Zubirán"},
+                  {"nombre": "Instituto Nacional de Enfermedades Respiratorias Ismael Cosío Villegas"},
+                  {"nombre": "Instituto Nacional de Geriatría"},
+                  {"nombre": "Instituto Nacional de Medicina Genómica"},
+                  {"nombre": "Instituto Nacional de Neurología y Neurocirugía Manuel Velasco Suárez"},
+                  {"nombre": "Instituto Nacional de Pediatría"},
+                  {"nombre": "Instituto Nacional de Perinatología Isidro Espinosa de los Reyes"},
+                  {"nombre": "Instituto Nacional de Psiquiatría Ramón de la Fuente Muñiz"},
+                  {"nombre": "Instituto Nacional de Rehabilitación Luis Guillermo Ibarra Ibarra"},
+                  {"nombre": "Instituto Nacional de Salud Pública"},
+                  {"nombre": "Sistema Nacional para el Desarrollo Integral de la Familia"}
+                ]
+              },
+              {
+                "nombre": "Ramo: Trabajo y Previsión Social",
+                "hijos": [
+                  {"nombre": "Centro Federal de Conciliación y Registro Laboral"},
+                  {"nombre": "Comisión Nacional de los Salarios Mínimos"},
+                  {"nombre": "Instituto del Fondo Nacional para el Consumo de los Trabajadores"},
+                  {"nombre": "Instituto Mexicano de la Juventud"}
+                ]
+              },
+              {
+                "nombre": "Ramo: Desarrollo Agrario, Territorial y Urbano",
+                "hijos": [
+                  {"nombre": "Comisión Nacional de Vivienda"},
+                  {"nombre": "Instituto Nacional del Suelo Sustentable"},
+                  {"nombre": "Procuraduría Agraria"}
+                ]
+              },
+              {
+                "nombre": "Ramo: Cultura",
+                "hijos": [
+                  {"nombre": "Instituto Mexicano de Cinematografía"},
+                  {"nombre": "Instituto Nacional de Lenguas Indígenas"}
+                ]
+              },
+              {
+                "nombre": "Ramo: Transformación Digital y telecomunicaciones",
+                "hijos": [
+                  {"nombre": "Agencia Espacial Mexicana"},
+                  {"nombre": "Servicio Postal Mexicano"}
+                ]
+              },
+              {
+                "nombre": "Organismos Descentralizados No Sectorizados",
+                "hijos": [
+                  {"nombre": "Archivo General de la Nación"},
+                  {"nombre": "Comisión Ejecutiva de Atención a Víctimas"},
+                  {"nombre": "Comisión Nacional para la Mejora Continua de la Educación"},
+                  {"nombre": "Extinta Luz y Fuerza del Centro"},
+                  {"nombre": "Instituto de Seguridad y Servicios Sociales de los Trabajadores del Estado"},
+                  {"nombre": "Instituto del Fondo Nacional de la Vivienda para los Trabajadores"},
+                  {"nombre": "Instituto Mexicano de la Radio"},
+                  {"nombre": "Instituto Mexicano del Seguro Social"},
+                  {"nombre": "Instituto Nacional de los Pueblos Indígenas"},
+                  {"nombre": "Procuraduría de la Defensa del Contribuyente"},
+                  {"nombre": "Secretaría Ejecutiva del Sistema Nacional Anticorrupción"},
+                  {"nombre": "Servicios de Salud del Instituto Mexicano del Seguro Social para el Bienestar (IMSS- BIENESTAR)"},
+                  {"nombre": "Sistema Público de Radiodifusión del Estado Mexicano"}
+                ]
+              }
+            ]
+          },
+          {
+            "nombre": "Empresas de Participación Estatal Mayoritaria, Instituciones Nacionales de Crédito, Organizaciones Auxiliares Nacionales de Crédito e Instituciones Nacionales de Seguros y de Fianzas",
+            "hijos": [
+              {"nombre": "Administración del Sistema Portuario Nacional Acapulco, S.A. de C.V."},
+              {"nombre": "Administración del Sistema Portuario Nacional Altamira, S.A. de C.V."},
+              {"nombre": "Administración del Sistema Portuario Nacional Cabo San Lucas, S.A. de C.V."},
+              {"nombre": "Administración del Sistema Portuario Nacional Coatzacoalcos, S.A. de C.V."},
+              {"nombre": "Administración del Sistema Portuario Nacional Dos Bocas, S.A. de C.V."},
+              {"nombre": "Administración del Sistema Portuario Nacional Ensenada, S.A. de C.V."},
+              {"nombre": "Administración del Sistema Portuario Nacional Guaymas, S.A. de C.V."},
+              {"nombre": "Administración del Sistema Portuario Nacional Lázaro Cárdenas, S.A. de C.V."},
+              {"nombre": "Administración del Sistema Portuario Nacional Manzanillo, S.A. de C.V."},
+              {"nombre": "Administración del Sistema Portuario Nacional Mazatlán, S.A. de C.V."},
+              {"nombre": "Administración del Sistema Portuario Nacional Progreso, S.A. de C.V."},
+              {"nombre": "Administración del Sistema Portuario Nacional Puerto Chiapas, S.A. de C.V."},
+              {"nombre": "Administración del Sistema Portuario Nacional Puerto Vallarta, S.A. de C.V."},
+              {"nombre": "Administración del Sistema Portuario Nacional Salina Cruz, S.A. de C.V."},
+              {"nombre": "Administración del Sistema Portuario Nacional Tampico, S.A. de C.V."},
+              {"nombre": "Administración del Sistema Portuario Nacional Topolobampo, S.A. de C.V."},
+              {"nombre": "Administración del Sistema Portuario Nacional Tuxpan, S.A. de C.V."},
+              {"nombre": "Administración del Sistema Portuario Nacional Veracruz, S.A. de C.V."},
+              {"nombre": "Aerolínea del Estado Mexicano, S.A. de C.V."},
+              {"nombre": "Aeropuerto Internacional de la Ciudad de México, S.A. de C.V."},
+              {"nombre": "Aeropuerto Internacional Felipe Ángeles, S.A. de C.V."},
+              {"nombre": "Agroasemex, S.A."},
+              {"nombre": "Alimentación para el Bienestar, S.A. de C.V."},
+              {"nombre": "Banco del Bienestar, S.N.C."},
+              {"nombre": "Banco Nacional de Comercio Exterior, S.N.C."},
+              {"nombre": "Banco Nacional de Obras y Servicios Públicos, S.N.C."},
+              {"nombre": "Banco Nacional del Ejército, Fuerza Aérea y Armada, S.N.C."},
+              {"nombre": "Centro de Capacitación Cinematográfica, A.C."},
+              {"nombre": "Centro de Investigación Científica de Yucatán, A.C."},
+              {"nombre": "Centro de Investigación en Alimentación y Desarrollo, A.С."},
+              {"nombre": "Centro de Investigación en Ciencias de Información Geoespacial, A.C."},
+              {"nombre": "Centro de Investigación en Matemáticas, A.C."},
+              {"nombre": "Centro de Investigación en Materiales Avanzados, S.C."},
+              {"nombre": "Centro de Investigación y Asistencia en Tecnología y Diseño del Estado de Jalisco, A.C."},
+              {"nombre": "Centro de Investigación y Desarrollo Tecnológico en Electroquímica, S.C."},
+              {"nombre": "Centro de Investigación y Docencia Económicas, A.C."},
+              {"nombre": "Centro de Investigaciones Biológicas del Noroeste, S.C."},
+              {"nombre": "Centro de Investigaciones en Óptica, A.C."},
+              {"nombre": "Centros de Integración Juvenil, A.C."},
+              {"nombre": "CIATEC, A.C. \"Centro de Innovación Aplicada en Tecnologías Competitivas\""},
+              {"nombre": "CIATEQ, A.C. \"Centro de Tecnología Avanzada\""},
+              {"nombre": "Compañía Operadora del Centro Cultural y Turístico de Tijuana, S.A. de C.V."},
+              {"nombre": "Educal, S.A. de C.V."},
+              {"nombre": "El Colegio de la Frontera Norte, A.C."},
+              {"nombre": "El Colegio de México, A.C."},
+              {"nombre": "El Colegio de Michoacán, A.C."},
+              {"nombre": "El Colegio de San Luis, A.C."},
+              {"nombre": "Estudios Churubusco Azteca, S.A."},
+              {"nombre": "Exportadora de Sal, S.A. de C.V."},
+              {"nombre": "Ferrocarril del Istmo de Tehuantepec, S.A. de C.V."},
+              {"nombre": "FONATUR Constructora, S.A. de C.V."},
+              {"nombre": "FONATUR Infraestructura, S.A. de C.V."},
+              {"nombre": "Grupo Aeroportuario Turístico Mexicano, S.A. de C.V."},
+              {"nombre": "Grupo Aeroportuario, Ferroviario, de Servicios Auxiliares y Conexos Olmeca- Maya- Mexica, S.A. de C.V."},
+              {"nombre": "Impresora y Encuadernadora Progreso, S.A. de C.V."},
+              {"nombre": "Innova Bienestar de México, S.A.P.I. de C.V."},
+              {"nombre": "Instituto de Ecología, A.C."},
+              {"nombre": "Instituto Nacional para el Desarrollo de Capacidades del Sector Rural, A.C."},
+              {"nombre": "Instituto Potosino de Investigación Científica y Tecnológica, A.C."},
+              {"nombre": "Laboratorios de Biológicos y Reactivos de México, S.A. de C.V."},
+              {"nombre": "Leche para el Bienestar S.A. de C.V."},
+              {"nombre": "Nacional Financiera, S.N.C."},
+              {"nombre": "Seguros de Crédito a la Vivienda SHF, S.A. de C.V."},
+              {"nombre": "Sociedad Hipotecaria Federal, S.N.C."},
+              {"nombre": "Televisión Metropolitana, S.A. de C.V."},
+              {"nombre": "Tren Maya, S.A. de C.V."},
+              {"nombre": "Turística Integral Islas Marías, S.A. de C.V."}
+            ]
+          },
+          {
+            "nombre": "Fideicomiso y Fondos Públicos, considerados Centros Públicos de Investigación Humanística y Científica, Desarrollo Tecnológico e Innovación y que forman parte del Sistema Bancario Mexicano",
+            "hijos": [
+              {"nombre": "Fideicomiso de Fomento Minero"},
+              {"nombre": "Fideicomiso de los Sistemas Normalizado de Competencia Laboral y de Certificación de Competencia Laboral"},
+              {"nombre": "Fideicomiso de Riesgo Compartido"},
+              {"nombre": "Fideicomiso Fondo Nacional de Fomento Ejidal"},
+              {"nombre": "Fideicomiso para la Cineteca Nacional"},
+              {"nombre": "Fideicomiso Universidad Marítima y Portuaria de México"},
+              {"nombre": "Fondo de Capitalización e Inversión del Sector Rural"},
+              {"nombre": "Fondo de Garantía y Fomento para la Agricultura, Ganadería y Avicultura"},
+              {"nombre": "Fondo de Garantía y Fomento para las Actividades Pesqueras"},
+              {"nombre": "Fondo de Operación y Financiamiento Bancario a la Vivienda"},
+              {"nombre": "Fondo Especial de Asistencia Técnica y Garantía para Créditos Agropecuarios"},
+              {"nombre": "Fondo Especial para Financiamientos Agropecuarios"},
+              {"nombre": "Fondo Nacional de Fomento al Turismo"},
+              {"nombre": "Fondo Nacional para el Fomento de las Artesanías"},
+              {"nombre": "INFOTEC Centro de Investigación e Innovación en Tecnologías de la Información y Comunicación"}
+            ]
+          },
+          {
+            "nombre": "Entidades en proceso de desincorporación",
+            "hijos": [
+              {"nombre": "Compañía Mexicana de Exploraciones, S.A. de C.V."},
+              {"nombre": "Consejo Nacional de Evaluación de la Política de Desarrollo Social"},
+              {"nombre": "Ferrocarriles Nacionales de México"},
+              {"nombre": "Financiera Nacional de Desarrollo Agropecuario, Rural, Forestal y Pesquero"},
+              {"nombre": "FONATUR Solar, S.A. de C.V."},
+              {"nombre": "FONATUR Tren Maya, S.A. de C.V."},
+              {"nombre": "Fondo de Empresas Expropiadas del Sector Azucarero"},
+              {"nombre": "Instituto Nacional de la Infraestructura Física Educativa"},
+              {"nombre": "Notimex, Agencia de Noticias del Estado Mexicano"},
+              {"nombre": "Seguridad Alimentaria Mexicana"}
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "nombre": "Empresas Públicas del Estado, que se regulan por sus propias leyes",
+    "hijos": [
+      {"nombre": "Comisión Federal de Electricidad"},
+      {"nombre": "Petróleos Mexicanos"}
+    ]
+  },
+  {
+    "nombre": "Tribunales Administrativos",
+    "hijos": [
+      {"nombre": "Junta Federal de Conciliación y Arbitraje"},
+      {"nombre": "Tribunal Federal de Conciliación y Arbitraje"},
+      {"nombre": "Tribunal Federal de Justicia Administrativa"},
+      {"nombre": "Tribunal Superior Agrario"}
+    ]
+  },
+  {
+    "nombre": "Fideicomisos y Fondos Públicos",
+    "hijos": [
+      {
+        "nombre": "Agencia Mexicana de Cooperación Internacional para el Desarrollo",
+        "hijos": [
+          {"nombre": "Fondo México"},
+          {"nombre": "Fondo mixto de cooperación técnica y científica México-España"}
+        ]
+      },
+      {
+        "nombre": "Agencia Nacional de Aduanas de México",
+        "hijos": [
+          {"nombre": "Fideicomiso para administrar la contraprestación del artículo 16 de la Ley Aduanera"}
+        ]
+      },
+      {
+        "nombre": "Agencia Nacional de Seguridad Industrial y de Protección al Medio Ambiente del Sector Hidrocarburos",
+        "hijos": [
+          {"nombre": "Fideicomiso Público de Administración y Pago"}
+        ]
+      },
+      {
+        "nombre": "Banco del Bienestar",
+        "hijos": [
+          {"nombre": "Fideicomiso de administración para el otorgamiento y primas de antigüedad"},
+          {"nombre": "Fideicomiso irrevocable de inversión y administración para el pago de pensiones y jubilaciones (F/10045)"},
+          {"nombre": "Fondo de protección de sociedades financieras populares y de protección a sus ahorradores (F/10216)"},
+          {"nombre": "Fondo de supervisión auxiliar de sociedades cooperativas de ahorro y Préstamo y de Protección a sus Ahorradores (F/10217)"}
+        ]
+      },
+      {
+        "nombre": "Banco Nacional de Comercio Exterior, S.N.C.",
+        "hijos": [
+          {"nombre": "Fideicomiso de apoyo a las exportaciones FIDAPEX"},
+          {"nombre": "Fideicomiso para el impulso al financiamiento de las empresas"},
+          {"nombre": "Fideicomiso para el Pago de Gastos de Servicios de Asistencia y Defensa Legal Bancomext"},
+          {"nombre": "Fideicomiso PEA y préstamos jubilados"},
+          {"nombre": "Fondo de pensiones Bancomext"},
+          {"nombre": "Fondo de pensiones de contribución definida de Bancomext"}
+        ]
+      },
+      {
+        "nombre": "Banco Nacional de Obras y Servicios Públicos, S.N.C.",
+        "hijos": [
+          {"nombre": "Fideicomiso 2065 Plan de pensiones de los jubilados de BANOBRAS"},
+          {"nombre": "Fideicomiso 2160 Fondo de pensiones de contribución definida"},
+          {"nombre": "Fideicomiso 285.-Promotora de desarrollo urbano. - Fraccionamiento Bosques del Valle Coacalco"},
+          {"nombre": "Fideicomiso 351.- Unidad Morazán"},
+          {"nombre": "Fideicomiso 1936 Fondo Nacional de Infraestructura"},
+          {"nombre": "M. 133.- Fraccionamiento Agua Hedionda"}
+        ]
+      },
+      {
+        "nombre": "Banco Nacional del Ejército, Fuerza Aérea y Armada, S.N.C.",
+        "hijos": [
+          {"nombre": "Fideicomiso irrevocable de administración e inversión del fondo de pensiones o jubilaciones o primas de antigüedad de los trabajadores del Banco Nacional del Ejército, Fuerza Aérea y Armada, S.N.C."}
+        ]
+      },
+      {
+        "nombre": "Caminos y Puentes Federales de Ingresos y Servicios Conexos",
+        "hijos": [
+          {"nombre": "F/11025590 (Antes 4483-0) \"Durango-Yerbanis\""},
+          {"nombre": "F/1516 ATM (Antes 639-00-5) Tijuana-Tecate"},
+          {"nombre": "F/21935-2 \"Kantunil-Cancún\""},
+          {"nombre": "F/31293-4 Libramiento Oriente de San Luis Potosí"},
+          {"nombre": "F/689 San Martín Texmelucan-Tlaxcala-El Molinito"},
+          {"nombre": "Fideicomiso 11029386 (antes SM940243) Gómez Palacio-Cuencamé-Yerbanis"}
+        ]
+      },
+      {
+        "nombre": "Centro de Investigación en Matemáticas, A.C.",
+        "hijos": [
+          {"nombre": "Fideicomiso de obligaciones laborales del CIMAT"}
+        ]
+      },
+      {
+        "nombre": "Centro de Investigación en Química Aplicada",
+        "hijos": [
+          {"nombre": "Fideicomiso para pago de primas de antigüedad y jubilación CIQA"}
+        ]
+      },
+      {
+        "nombre": "Centro de Investigación y Docencia Económicas, A.C.",
+        "hijos": [
+          {"nombre": "Fideicomiso 1725-1-Para integrar diversos fondos (Patrimonial)"}
+        ]
+      },
+      {
+        "nombre": "Centro de Investigaciones en Óptica, A.C.",
+        "hijos": [
+          {"nombre": "Fideicomiso para el pago de las obligaciones laborales de los trabajadores del Centro de Investigaciones en Óptica, A.C"}
+        ]
+      },
+      {
+        "nombre": "Centro Nacional de Control de Energía",
+        "hijos": [
+          {"nombre": "Fondo de Capital de Trabajo del Mercado Eléctrico Mayorista"}
+        ]
+      },
+      {
+        "nombre": "Centro Nacional de Control del Gas Natural",
+        "hijos": [
+          {"nombre": "Fideicomiso de Administración y Pago CENAGAS-BANCOMEXT número 10637"}
+        ]
+      },
+      {
+        "nombre": "CIATEC, A.C. \"Centro de Innovación Aplicada en Tecnologías Competitivas\"",
+        "hijos": [
+          {"nombre": "Fideicomiso para pasivos laborales y primas de antigüedad para el personal del CIATEC"}
+        ]
+      },
+      {
+        "nombre": "CIATEQ, A.C. Centro de Tecnología Avanzada",
+        "hijos": [
+          {"nombre": "Fondo de retiro voluntario y liquidaciones del personal de CIATEQ, A.C."}
+        ]
+      },
+      {
+        "nombre": "Colegio de Postgraduados",
+        "hijos": [
+          {"nombre": "Fideicomiso de apoyo a la investigación científica y desarrollo tecnológico del Colegio de Postgraduados"}
+        ]
+      },
+      {
+        "nombre": "Comisión Ejecutiva de Atención a Víctimas",
+        "hijos": [
+          {"nombre": "Fondo de ayuda, asistencia y reparación integral"}
+        ]
+      },
+      {
+        "nombre": "Comisión Federal de Electricidad",
+        "hijos": [
+          {"nombre": "Fideicomiso de administración y traslativo de dominio (Obras de Infraestructura para el Sistema Eléctrico Federal)."},
+          {"nombre": "Fideicomiso para el ahorro de energía eléctrica"},
+          {"nombre": "Fideicomiso para la constitución de un fondo revolvente de financiamiento para el programa de aislamiento térmico de la vivienda en el Valle de Mexicali, B.C. (FIPATERM Mexicali)"}
+        ]
+      },
+      {
+        "nombre": "Comisión Nacional Bancaria y de Valores",
+        "hijos": [
+          {"nombre": "Fideicomiso fondo de apoyo a los trabajadores de confianza de la Comisión Nacional Bancaria y de Valores."},
+          {"nombre": "Fideicomiso para el pago de gratificación por antigüedad a los trabajadores de base de la CNBV que se retiren después de 15 años de servicios ininterrumpidos"},
+          {"nombre": "Fondo para la asistencia y defensa legal de los miembros de la Junta de Gobierno de la Comisión Nacional Bancaria y de Valores que no sean servidores públicos de ésta, así como de los Interventores y personal auxiliar al cual los propios Interventores les otorguen poderes porque sea necesario para el desempeño de sus funciones."}
+        ]
+      },
+      {
+        "nombre": "Comisión Nacional de Áreas Naturales Protegidas",
+        "hijos": [
+          {"nombre": "Fideicomiso de administración, inversión y pago número 013 ANP Valle de Bravo"}
+        ]
+      },
+      {
+        "nombre": "Comisión Nacional de Energía",
+        "hijos": [
+          {"nombre": "Fideicomiso de la Comisión Nacional de Hidrocarburos"},
+          {"nombre": "Fideicomiso de la Comisión Reguladora de Energía"}
+        ]
+      },
+      {
+        "nombre": "Comisión Nacional del Agua",
+        "hijos": [
+          {"nombre": "Fideicomiso irrevocable de administración y fuente de pago, No. 1928.- para apoyar el proyecto de saneamiento del Valle de México"}
+        ]
+      },
+      {
+        "nombre": "Educal. S.A. de C.V",
+        "hijos": [
+          {"nombre": "Fondo para los trabajadores por prima de antigüedad de EDUCAL"}
+        ]
+      },
+      {
+        "nombre": "Exportadora de Sal, S.A. de C.V.",
+        "hijos": [
+          {"nombre": "Fideicomiso plan de pensiones y jubilaciones ESSA"}
+        ]
+      },
+      {
+        "nombre": "Ferrocarriles Nacionales de México",
+        "hijos": [
+          {"nombre": "Fideicomiso 5012-6 FERRONALESJUB (para el pago de pensiones jubilatorias a los trabajadores de Ferrocarriles Nacionales de México)"}
+        ]
+      },
+      {
+        "nombre": "Fideicomiso de Fomento Minero",
+        "hijos": [
+          {"nombre": "Plan de pensiones de contribución definida para el personal de mando del FIFOMI"},
+          {"nombre": "Plan de pensiones personal operativo"},
+          {"nombre": "Prima de antigüedad"}
+        ]
+      },
+      {
+        "nombre": "Fideicomiso Fondo Nacional de Fomento Ejidal",
+        "hijos": [
+          {"nombre": "Fideicomiso traslativo de dominio Puerto los Cabos"}
+        ]
+      },
+      {
+        "nombre": "Financiera para el Bienestar",
+        "hijos": [
+          {"nombre": "Fideicomiso de la Financiera para el Bienestar"}
+        ]
+      },
+      {
+        "nombre": "Fondo de Capitalización e Inversión del Sector Rural",
+        "hijos": [
+          {"nombre": "Fondo de inversión de capital en Agronegocios (FICA Sureste 2)"},
+          {"nombre": "Fondo de inversión de capital en Agronegocios 3 (FICA 3)"},
+          {"nombre": "Fondo de Inversión de Capital en Agronegocios 4 (FICA 4)"},
+          {"nombre": "Fondo de inversión de capital en Agronegocios Activa (FICA Activa)"},
+          {"nombre": "Fondo de Inversión de Capital en Agronegocios Infraestructura"}
+        ]
+      },
+      {
+        "nombre": "Fondo de Cultura Económica",
+        "hijos": [
+          {"nombre": "Fideicomiso de administración e Inversión para el manejo del fondo de ahorro de los trabajadores del Fondo de Cultura Económica"}
+        ]
+      },
+      {
+        "nombre": "Fondo de Garantía y Fomento para la Agricultura, Ganadería y Avicultura",
+        "hijos": [
+          {"nombre": "Fideicomiso de pensiones, del Fondo de Garantía y Fomento para la Agricultura, Ganadería y Avicultura"}
+        ]
+      },
+      {
+        "nombre": "Fondo de Garantía y Fomento para las Actividades Pesqueras",
+        "hijos": [
+          {"nombre": "Fideicomiso para el pago de primas de antigüedad, pensiones y jubilaciones del personal del Fondo de Garantía y Fomento para las Actividades Pesqueras"}
+        ]
+      },
+      {
+        "nombre": "Fondo Nacional de Fomento al Turismo",
+        "hijos": [
+          {"nombre": "Fideicomiso Barrancas del Cobre"},
+          {"nombre": "Fideicomiso de reserva para el pago de pensiones o jubilaciones y primas de antigüedad"},
+          {"nombre": "Fideicomiso para los trabajadores del Hotel Exconvento Santa Catarina"}
+        ]
+      },
+      {
+        "nombre": "Instituto de Seguridad Social para las Fuerzas Armadas Mexicanas",
+        "hijos": [
+          {"nombre": "Contrato de mandato para el pago de haberes de retiro, pensiones y compensaciones"}
+        ]
+      },
+      {
+        "nombre": "Instituto del Fondo Nacional para el Consumo de los Trabajadores",
+        "hijos": [
+          {"nombre": "Fideicomiso de administración e inversión para pensiones de los trabajadores"},
+          {"nombre": "Fideicomiso de inversión y administración de primas de antigüedad de los trabajadores"}
+        ]
+      },
+      {
+        "nombre": "Instituto Mexicano de Cinematografía",
+        "hijos": [
+          {"nombre": "Fideicomiso fondo de inversión y estímulos al cine (FIDECINE)"},
+          {"nombre": "Fideicomiso fondo para la producción cinematográfica de calidad (FOPROCINE)"}
+        ]
+      },
+      {
+        "nombre": "Instituto Mexicano de Investigación en Pesca y Acuacultura Sustentables",
+        "hijos": [
+          {"nombre": "Fideicomiso de investigación para el desarrollo del programa de aprovechamiento del atún y protección de delfines y otros en torno a especies acuáticas protegidas"}
+        ]
+      },
+      {
+        "nombre": "Instituto Mexicano del Petróleo",
+        "hijos": [
+          {"nombre": "Fideicomiso para apoyo a la investigación científica y desarrollo tecnológico"},
+          {"nombre": "Fideicomiso para pensionados del IMP"},
+          {"nombre": "Fideicomiso para el plan de pensiones para el personal activo del IMP"},
+          {"nombre": "Fideicomiso Fondo de ahorro"}
+        ]
+      },
+      {
+        "nombre": "Instituto Mexicano del Seguro Social",
+        "hijos": [
+          {"nombre": "Fideicomiso de administración de teatros y salas de espectáculos IMSS"},
+          {"nombre": "Fideicomiso de beneficios sociales (FIBESO)"},
+          {"nombre": "Fideicomiso para el desarrollo del deporte No. 4611-1"},
+          {"nombre": "Fondo de fomento a la educación (FOFOE)"},
+          {"nombre": "Fondo para ayudas extraordinarias con motivo del incendio de la Guardería ABC"}
+        ]
+      },
+      {
+        "nombre": "Instituto Nacional de Antropología e Historia",
+        "hijos": [
+          {"nombre": "Fideicomiso para el fomento y la conservación del Patrimonio Cultural, Antropológico, Arqueológico e Histórico de México"}
+        ]
+      },
+      {
+        "nombre": "Instituto Nacional del Suelo Sustentable",
+        "hijos": [
+          {"nombre": "Fondo de ahorro para los trabajadores de CORETT"}
+        ]
+      },
+      {
+        "nombre": "Instituto para Devolver al Pueblo lo Robado",
+        "hijos": [
+          {"nombre": "Almacenadora Sur, S.A."},
+          {"nombre": "Fideicomiso de pensiones del sistema BANRURAL"},
+          {"nombre": "Fideicomiso Irrevocable de Inversión y Garantía Ingenio Mante Pensionados número 46645"},
+          {"nombre": "Fideicomiso para administrar el fondo de pensiones de FOPPAZ"},
+          {"nombre": "Fideicomiso para administrar el fondo de pensiones y gastos médicos de BANPESCA"},
+          {"nombre": "Fideicomiso para administrar el fondo de pensiones y gastos médicos de BNCI"},
+          {"nombre": "Fondo de pensiones de instituciones liquidadas"},
+          {"nombre": "Fondo de pensiones fideicomiso liquidador de Instituciones y Organizaciones Auxiliares de Crédito"},
+          {"nombre": "Fondo de pensiones Financiera Nacional Azucarera"},
+          {"nombre": "Fondo de pensiones Servicios de Almacenamiento del Norte S.A."}
+        ]
+      },
+      {
+        "nombre": "Nacional Financiera, S.N.C.",
+        "hijos": [
+          {"nombre": "Complemento del Préstamo Especial para el Ahorro (PEA) y préstamos de corto y mediano plazo para jubilados bajo el plan de beneficio definido"},
+          {"nombre": "Fideicomiso de capital emprendedor"},
+          {"nombre": "Fideicomiso de contragarantía para el financiamiento empresarial"},
+          {"nombre": "Fideicomiso de Defensa y Asistencia Legal"},
+          {"nombre": "Fideicomiso programa de venta de títulos en directo al público"},
+          {"nombre": "Fondo de pensiones de contribución definida de Nacional Financiera"},
+          {"nombre": "Fondo de pensiones y primas de Antigüedad de NAFIN"},
+          {"nombre": "Fondo para la participación de riesgos 11480"},
+          {"nombre": "Fondo para la participación de riesgos en fianzas"},
+          {"nombre": "Fondo Sostenible Nafin"},
+          {"nombre": "Mario Renato Menéndez Rodríguez 7997"}
+        ]
+      },
+      {
+        "nombre": "Petróleos Mexicanos",
+        "hijos": [
+          {"nombre": "Fideicomiso 294.- Colonia Petrolera José Escandón"},
+          {"nombre": "Fideicomiso de Abandono Ek Balam"},
+          {"nombre": "Fondo laboral PEMEX"}
+        ]
+      },
+      {
+        "nombre": "Secretaría de Cultura",
+        "hijos": [
+          {"nombre": "Fideicomiso Museo de Arte Popular Mexicano"},
+          {"nombre": "Fideicomiso para apoyar la construcción del Centro Nacional de las Artes"},
+          {"nombre": "Fideicomiso para la adaptación de los museos Diego Rivera y Frida Kahlo"},
+          {"nombre": "Fideicomiso para la conservación de la Casa del Risco y Pinacoteca Isidro Fabela"},
+          {"nombre": "Mandato Antiguo Colegio de San Idelfonso"},
+          {"nombre": "Mandato del fondo nacional para la cultura y las artes"}
+        ]
+      },
+      {
+        "nombre": "Secretaría de Desarrollo Agrario, Territorial y Urbano",
+        "hijos": [
+          {"nombre": "Fideicomiso de administración y garantía complementaria Fondo 95"},
+          {"nombre": "Fideicomiso de apoyo a los propietarios rurales en Chiapas (FIAPAR)"},
+          {"nombre": "Fideicomiso para el desarrollo de la región Sur-Sureste (Fidesur)"},
+          {"nombre": "Fideicomiso para el desarrollo regional Noreste (Fidenor-Este)"},
+          {"nombre": "Fondo de Mejoramiento Urbano"},
+          {"nombre": "Fondo para el ordenamiento de la propiedad rural"}
+        ]
+      },
+      {
+        "nombre": "Secretaría de Economía",
+        "hijos": [
+          {"nombre": "Fideicomiso del Programa Nacional Financiero al Microempresario"},
+          {"nombre": "Fideicomiso para Promover el Acceso al Financiamiento de MIPYMES y Emprendedores"}
+        ]
+      },
+      {
+        "nombre": "Secretaría de Educación Pública",
+        "hijos": [
+          {"nombre": "Bachillerato general en sus modalidades no escolarizada y mixta"},
+          {"nombre": "Fideicomiso 14780-8 Fondo Nacional para Escuelas de Calidad"},
+          {"nombre": "Fideicomiso del Programa de escuelas de excelencia para abatir el rezago educativo"},
+          {"nombre": "Fideicomiso para el Programa especial de financiamiento a la vivienda para el magisterio"},
+          {"nombre": "Fideicomiso para la Comisión México-Estados Unidos F 22927-8"},
+          {"nombre": "Fondo de la amistad México-Japón"},
+          {"nombre": "Fondo de retiro de los trabajadores de la SEP (FORTE)"},
+          {"nombre": "Mandato para el Fondo de apoyo al proyecto en el Distrito Federal"}
+        ]
+      },
+      {
+        "nombre": "Secretaría de Energía",
+        "hijos": [
+          {"nombre": "Fondo de servicio universal eléctrico"},
+          {"nombre": "Fondo para la transición energética y el aprovechamiento sustentable de la energía"}
+        ]
+      },
+      {
+        "nombre": "Secretaría de Gobernación",
+        "hijos": [
+          {"nombre": "Fideicomiso para el cumplimiento de obligaciones en materia de los derechos humanos"},
+          {"nombre": "Fideicomiso para la plataforma de infraestructura, mantenimiento y equipamiento de seguridad pública y de aeronaves"},
+          {"nombre": "Fondo de apoyo social para ex trabajadores migratorios mexicanos"}
+        ]
+      },
+      {
+        "nombre": "Secretaría de Hacienda y Crédito Público",
+        "hijos": [
+          {"nombre": "9/11 de la recaudación por concepto de las cuotas establecidas en el artículo 2°A. Fracción II de la Ley del Impuesto Especial sobre Producción y Servicios"},
+          {"nombre": "El 0.136 por ciento de la Recaudación Federal Participable"},
+          {"nombre": "Fideicomiso 1327.- Gobierno Federal, Programa de vivienda para magistrados y jueces del Poder Judicial Federal"},
+          {"nombre": "Fideicomiso 2003 \"Fondo de Desastres Naturales\""},
+          {"nombre": "Fideicomiso fondo de estabilización de los ingresos presupuestarios"},
+          {"nombre": "Fideicomiso para la Evaluación de los Fondos de Aportaciones Federales (FIDEFAF)"},
+          {"nombre": "Fideicomiso para la implementación del Sistema de Justicia Penal en las entidades federativas"},
+          {"nombre": "Fideicomiso para la Infraestructura en los Estados (FIES)"},
+          {"nombre": "Fondo Aportaciones para Servicio de Salud (FASSA)"},
+          {"nombre": "Fondo de Ahorro Capitalizable de los Trabajadores Al Servicio del Estado (FONAC)"},
+          {"nombre": "Fondo de Aportaciones Múltiples (FAM)"},
+          {"nombre": "Fondo de Aportaciones para Educación Tecnológica y de Adultos (FAETA)"},
+          {"nombre": "Fondo de Aportaciones para el Fortalecimiento de las Entidades Federativas (FAFEF)"},
+          {"nombre": "Fondo de Aportaciones para el Fortalecimiento de los Municipios y de las Demarcaciones Territoriales del Distrito Federal (FORTAMUN)"},
+          {"nombre": "Fondo de Aportaciones para la Infraestructura Social (FAIS)"},
+          {"nombre": "Fondo de Aportaciones para la Seguridad Pública de los Estados y del Distrito Federal (FASP)"},
+          {"nombre": "Fondo de Aportaciones para Nómina Educativa y Gasto Operativo (FONE)"},
+          {"nombre": "Fondo de apoyo para infraestructura y seguridad"},
+          {"nombre": "Fondo de compensación"},
+          {"nombre": "Fondo de compensación al régimen de pequeños contribuyentes y del régimen de los intermedios"},
+          {"nombre": "Fondo de compensación de automóviles nuevos"},
+          {"nombre": "Fondo de desincorporación de entidades"},
+          {"nombre": "Fondo de Estabilización de los Ingresos de las Entidades Federativas (FEIEF)"},
+          {"nombre": "Fondo de extracción de hidrocarburos"},
+          {"nombre": "Fondo de fiscalización y recaudación"},
+          {"nombre": "Fondo de fomento municipal"},
+          {"nombre": "Fondo de reconstrucción de Entidades Federativas"},
+          {"nombre": "Fondo general de participaciones"},
+          {"nombre": "Impuesto Especial sobre Producción y Servicios"},
+          {"nombre": "Impuesto sobre la renta participable"},
+          {"nombre": "Mandato extinta Comisión Monetaria"},
+          {"nombre": "Mandato fiduciario de inversión y admón. apoyo financiero a favor del Fideicomiso Sindicatura de Promotora del Valle de Morelia (PROVAM)"},
+          {"nombre": "Mandato Pago"},
+          {"nombre": "Mandato SHCP Mex. Tex Development Corp"},
+          {"nombre": "Museo Dolores Olmedo Patiño"}
+        ]
+      },
+      {
+        "nombre": "Secretaría de Infraestructura, Comunicaciones y Transportes",
+        "hijos": [
+          {"nombre": "Fideicomiso 122.- Benjamín Hill Trabajadores F.F.C.C. Sonora-Baja California"},
+          {"nombre": "Fideicomiso E-México"},
+          {"nombre": "Fideicomiso programa habitacional de FERRONALES en la República Mexicana"}
+        ]
+      },
+      {
+        "nombre": "Secretaría de la Defensa Nacional",
+        "hijos": [
+          {"nombre": "Fideicomiso a favor de los hijos del personal adscrito al Estado Mayor Presidencial"},
+          {"nombre": "Fideicomiso de apoyo a deudos de militares fallecidos o a militares que hayan adquirido una inutilidad en primera categoría en actos del servicio considerado de alto riesgo"},
+          {"nombre": "Fideicomiso público de administración y pago de equipo militar"}
+        ]
+      },
+      {
+        "nombre": "Secretaría de Medio Ambiente y Recursos Naturales",
+        "hijos": [
+          {"nombre": "Fideicomiso para apoyar los programas, proyectos y acciones ambientales de la megalópolis"},
+          {"nombre": "Fondo para la biodiversidad"}
+        ]
+      },
+      {
+        "nombre": "Secretaría de Turismo",
+        "hijos": [
+          {"nombre": "Fondo Mixto Ciudades Coloniales"},
+          {"nombre": "Fondo Mixto de Mazatlán"},
+          {"nombre": "Fondo Mixto Mundo Maya"}
+        ]
+      },
+      {
+        "nombre": "Servicio de Administración Tributaria",
+        "hijos": [
+          {"nombre": "Fideicomiso de Administración y Pago Número 80775"}
+        ]
+      },
+      {
+        "nombre": "Servicios de Salud del Instituto Mexicano del Seguro Social para el Bienestar (IMSS- BIENESTAR)",
+        "hijos": [
+          {"nombre": "Fondo de Salud para el Bienestar"}
+        ]
+      },
+      {
+        "nombre": "Sistema Nacional para el Desarrollo Integral de la Familia",
+        "hijos": [
+          {"nombre": "Fideicomiso DIF-Bosques de las Lomas"}
+        ]
+      }
+    ]
+  },
+  {
+    "nombre": "Instancia de Participación Ciudadana en el Sistema Nacional Anticorrupción",
+    "hijos": [
+      {"nombre": "Comité de Participación Ciudadana del Sistema Nacional Anticorrupción"}
+    ]
+  },
+  {
+    "nombre": "Sujetos Obligados de Reciente Creación",
+    "hijos": [
+      {"nombre": "Fideicomiso de Administración y Pago 108697"},
+      {"nombre": "Fideicomiso de Administración y pago SEMAR"},
+      {"nombre": "Fideicomiso para el Bienestar"},
+      {"nombre": "Fideicomiso para el Desarrollo del Istmo de Tehuantepec"},
+      {"nombre": "Fideicomiso para el Fortalecimiento del Sistema Aeroportuario SEDENA"},
+      {"nombre": "Fideicomiso para el Fortalecimiento del Sistema Aeroportuario SEMAR"},
+      {"nombre": "Fideicomiso Público de Administración y Pago para la contratación de Servicios y Obra Pública"}
+    ]
+  }
+]

@@ -1,0 +1,160 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container mt-5">
+    <h3>Cuestionario</h3>
+
+    <div class="row">
+        <!-- Content -->
+        <div class="col-md-7 col-lg-8 p-3">
+            <!-- Nav Pills -->
+            <ul class="nav nav-tabs nav-justified">
+                {% for i in "123456789101" %}
+                <li class="nav-item">
+                    <a class="nav-link"
+                       data-section="{{ forloop.counter }}"
+                       href="{% url 'apps.cuestionarios:seccion' cuestionario.id forloop.counter %}">
+                       {{ forloop.counter }}
+                    </a>
+                </li>
+                {% endfor %}
+            </ul>
+
+            <br>
+            <!-- Tab Content -->
+            <form method="post">
+                {% csrf_token %}
+
+                <div class="card mb-4">
+                    <div class="card-header">III. Fundamento legal que faculta al Sujeto Obligado para llevar a cabo el tratamiento de datos personales / ¿Cuál es el fundamento legal para el tratamiento?</div>
+                    <div class="card-body contenedor-grid">
+
+                        <div class="row">
+                            <h5>Fundamento legal</h5>
+<!--                            <div class="col-md-12">-->
+<!--                                 <label>-->
+<!--                                    Instrumento normativo-->
+<!--                                </label>-->
+<!--                                <input type="text" id="ley">-->
+<!--                            </div>-->
+<!--                            <div class="col-md-12">-->
+<!--                                <label>-->
+<!--                                    Artículos-->
+<!--                                </label>-->
+<!--                                <input type="text" id="especificacion">-->
+<!--                            </div>-->
+                        </div>
+                        <div class="row">
+                            <label>
+                                Instrumento normativo
+                            </label>
+                            <input type="text" id="ley" class="form-control">
+                        </div>
+                        <div class="row">
+                            <label>
+                                Artículos
+                            </label>
+                            <input type="text" id="especificacion" class="form-control">
+                        </div>
+
+                        <hr>
+
+                        <div class="row justify-content-end">
+                            <div class="col-2">
+                                <button type="button" id="btnAgregar" class="btn btn-custom">
+                                    Agregar
+                                </button>
+                            </div>
+
+                            <div class="col-3">
+                                <button type="button" id="btnLimpiar" class="btn btn-custom">
+                                    Limpiar campos
+                                </button>
+                            </div>
+
+                            <div class="col-3">
+                                <button type="button" id="btnModificar" class="btn btn-custom">
+                                    Guardar cambios
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="btns-div">
+                    <button class="btn btn-custom" type="submit">Siguiente</button>
+                </div>
+
+                <br>
+            
+            </form>
+
+            <div class="card mb-4">
+                <div class="card-body">
+                    <table class="table table-bordered align-middle">
+                        <thead class="table-light">
+                                <tr>
+                                    <th>Instrumento normativo</th>
+                                    <th>Artículos</th>
+                                    <th>Acción</th>
+                                </tr>
+                        </thead>
+                        <tbody id="tablaFundamentosInv">
+
+                            {% for fundamento in fundamentos %}
+
+                                <tr id="fundamentoInv-{{ fundamento.id }}">
+
+                                    <td>
+                                        <p>{{ fundamento.ley }}</p>
+                                    </td>
+
+                                    <td>
+                                        <p>{{ fundamento.especificacion }}</p>
+                                    </td>
+
+                                    <td>
+
+                                        <button class="btn btn-danger btnEliminar"
+                                                data-id="{{ fundamento.id }}">
+                                            Eliminar
+                                        </button>
+
+                                        <br><br>
+
+                                        <button class="btn btn-warning btnEditar"
+                                                data-id="{{ fundamento.id }}">
+                                            Editar
+                                        </button>
+
+                                    </td>
+
+                                </tr>
+
+                            {% endfor %}
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+        <!-- Sidebar -->
+        <div class="col-md-5 col-lg-4 bg-light border-start" id="sidebar">
+            <br><br><br><br>
+            <div class="collapse show" id="sidebarContent">
+                <div class="collapse show" id="sidebarContent">
+                    <p class="texto-justificado">
+                        El aviso de privacidad deberá contener, al menos, la siguiente información: <b>(Artículo 21.)</b>
+                        <br><br>
+                        <b>III. El fundamento legal que faculta al responsable para llevar a cabo el tratamiento;</b>
+                        <br><br>
+                        <B>Fundamento legal</B> es el conjunto de leyes, artículos, normas y reglamentos específicos que respaldan, justifican y dan validez a una acción, decisión, derecho
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

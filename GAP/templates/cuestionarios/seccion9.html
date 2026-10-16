@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container mt-5">
+    <h3>Cuestionario</h3>
+    <div class="row">
+        <!-- Content -->
+        <div class="col-md-7 col-lg-8 p-3">
+            <!-- Nav Pills -->
+            <ul class="nav nav-tabs nav-justified">
+                {% for i in "123456789101" %}
+                <li class="nav-item">
+                    <a class="nav-link"
+                       data-section="{{ forloop.counter }}"
+                       href="{% url 'apps.cuestionarios:seccion' cuestionario.id forloop.counter %}">
+                       {{ forloop.counter }}
+                    </a>
+                </li>
+                {% endfor %}
+            </ul>
+
+            <br>
+            <!-- Tab Content -->
+            <form method="post">
+                {% csrf_token %}
+
+                <div class="card mb-4">
+                    <div class="card-header">VIII. Mecanismos y medios disponibles para que la persona titular pueda manifestar su negativa para el tratamiento de sus datos personales /¿Cómo se puede manifestar la negativa para el tratamiento o transferencia de datos personales?</div>
+                    <div class="card-body contenedor-grid">
+                        <p>{{ form.manifestacion.label_tag }}</p>
+                        {{ form.manifestacion }}
+
+                        <hr>
+
+                        <div class="row justify-content-end">
+                            <div class="col-3">
+                                <button type="button" id="btnLimpiar" class="btn btn-custom">
+                                    Limpiar campos
+                                </button>
+                            </div>
+                        </div>
+                    
+                </div>
+
+                {{ form.errors }}
+            </div>
+
+            <div class="btns-div">
+                <button class="btn btn-custom" type="submit">Siguiente</button>
+            </div>
+            
+            </form>
+        </div>
+        <!-- Sidebar -->
+        <div class="col-md-5 col-lg-4 bg-light border-start" id="sidebar">
+            <br><br><br><br>
+            <div class="collapse show" id="sidebarContent">
+                <p class="texto-justificado">
+                    El aviso de privacidad deberá contener, al menos, la siguiente información: <b>(Artículo 21.)</b>
+                    <br><br>
+                    <b>VIII. Los mecanismos y medios disponibles para que la persona titular, en su caso, pueda manifestar su negativa para el tratamiento de sus datos personales para finalidades y transferencias de datos personales que requieren el consentimiento de la persona titular, y</b>
+                    <br><br>
+                    El mecanismo podrá ser implementado a través de la inclusión de casillas u opciones de marcado en el propio aviso de privacidad, o bien fuera de éste, por el medio que el responsable determine, el cual deberá estar disponible al momento en que el titular consulta el aviso de privacidad. En todos los casos, este mecanismo debe permitir que el titular manifieste su negativa previo al tratamiento de sus datos personales o al aprovechamiento de los mismos.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

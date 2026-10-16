@@ -1,0 +1,81 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container mt-5">
+    <h3>Cuestionario</h3>
+    <div class="row">
+        <!-- Content -->
+        <div class="col-md-7 col-lg-8 p-3">
+            <!-- Nav Pills -->
+            <ul class="nav nav-tabs nav-justified">
+                {% for i in "123456789101" %}
+                <li class="nav-item">
+                    <a class="nav-link"
+                       data-section="{{ forloop.counter }}"
+                       href="{% url 'apps.cuestionarios:seccion' cuestionario.id forloop.counter %}">
+                       {{ forloop.counter }}
+                    </a>
+                </li>
+                {% endfor %}
+            </ul>
+
+            <br>
+            <!-- Tab Content -->
+            <form method="post">
+                {% csrf_token %}
+
+                <div class="card mb-4">
+                    <div class="card-header">IX. Medios para comunicar a las personas titulares de los datos personales los cambios realizados al aviso de privacidad. /¿Dónde se pueden conocer los cambios efectuados a este aviso de privacidad?</div>
+                    <div class="card-body contenedor-grid">
+                        <p>¿A través de qué <b>medios</b> se comunicarán a las personas titulares los <b>cambios o actualizaciones</b> al aviso de privacidad?</p>
+                        {{ form.modificaciones }}
+                        {{ form.modificaciones.errors }}
+
+                        <div class="div-otros">
+                            {{ form.modificaciones_otro.label_tag }}
+                            {{ form.modificaciones_otro }}
+                            {{ form.modificaciones_otro.errors }}
+                        </div>
+
+                        <br>
+
+                        {{ form.url.label_tag }}
+                        {{ form.url }}
+                        {{ form.url.errors }}
+
+                        <hr>
+
+                        <div class="row justify-content-end">
+                            <div class="col-3">
+                                <button type="button" id="btnLimpiar" class="btn btn-custom">
+                                    Limpiar campos
+                                </button>
+                            </div>
+                        </div>
+                </div>
+
+                {{ form.errors }}
+            </div>
+
+            <div class="btns-div">
+                <button class="btn btn-custom" type="submit">Siguiente</button>
+            </div>
+            
+            </form>
+        </div>
+        <!-- Sidebar -->
+        <div class="col-md-5 col-lg-4 bg-light border-start" id="sidebar">
+            <br><br><br><br>
+            <div class="collapse show" id="sidebarContent">
+                <p class="texto-justificado">
+                    El aviso de privacidad deberá contener, al menos, la siguiente información: <b>(Artículo 21.)</b>
+                    <br><br>
+                    <b>IX. Los medios a través de los cuales el responsable comunicará a las personas titulares los cambios al aviso de privacidad.</b>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

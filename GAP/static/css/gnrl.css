@@ -1,0 +1,281 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+@font-face {
+    font-family: 'Patria';
+    font-style: normal;
+    font-weight: 400;
+    src: url("https://framework-gb.cdn.gob.mx/applications/cms/fonts/Patria_Regular.otf") format("opentype");
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+
+:root {
+  /* Paleta de Colores */
+  --color-dark-deep: #062110;
+  --color-primary-dark: #11312c;
+  --color-primary: #004740;
+  --color-accent: #45fbd6;
+  --color-gray-border: #cccccc;
+  --color-gray-bg: #e6e6e6;
+  --color-white: #ffffff;
+
+  /* Declaración de Fuentes */
+  --font-heading: 'Patria', sans-serif;
+  --font-body: 'Noto Sans', sans-serif;
+}
+
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6, .banner-title {
+    font-family: var(--font-heading);
+    color: var(--color-primary-dark);
+}
+
+h1 { font-size: 2.25rem; font-weight: 700; margin-bottom: 1rem; }
+h2 { font-size: 1.75rem; color: var(--color-primary); margin-bottom: 0.75rem; }
+h3 { font-size: 1.35rem; margin-bottom: 0.5rem; }
+
+.btn-initial {
+    font-family: "Patria", "Noto Sans", "Helvetica", "Arial", sans-serif;
+}
+
+p, label, input {
+    font-family: 'Noto Sans', sans-serif !important;
+}
+
+/* Aplica la fuente al contenedor y fuerza a los elementos de formulario a heredarla */
+.noto-sans,
+.noto-sans input,
+.noto-sans textarea,
+.noto-sans select,
+.noto-sans button,
+.noto-sans label {
+    font-family: 'Noto Sans', sans-serif !important;
+}
+
+.bg-d-gray {
+    background: rgb(204, 204, 204);
+}
+
+.bg-l-gray {
+    background: rgb(230, 230, 230);
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+
+  /* Degradado lineal con 4 colores */
+  background: linear-gradient(
+    90deg,
+    #45fbd6 0%,     /* Color 1: predomina */
+    #45fbd6 30%,    /* Color 1 ocupa el 30% */
+    #004740 50%,    /* Color 2 */
+    #11312c 75%,    /* Color 3 */
+    #06201d 100%    /* Color 4 */
+  );
+}
+.navbar-custom .nav-link {
+  color: #cccccc; /* aquí defines el color del texto */
+}
+
+.navbar-custom .nav-link:hover {
+  color: #ffffff; /* opcional: color al pasar el mouse */
+}
+
+
+.btn-custom {
+  background-color: #11312c;   /* color de fondo */
+  color: #e6e6e6;              /* color del texto */
+  border: none;                /* sin borde */
+  border-radius: 8px;          /* esquinas redondeadas */
+  padding: 10px 20px;          /* espacio interno */
+  /*size: 22px;             /* tamaño de letra */
+  cursor: pointer;             /* cursor tipo mano */
+}
+
+.btn-custom:hover {
+  background-color: #11312c;
+  color: #45fbd6;
+  border: 2px solid #45fbd6;
+}
+
+.btn-custom:disabled {
+  background-color: #e6e6e6;
+  color: #11312c;
+  border: 2px solid #11312c;
+}
+.btn-outline {
+  background-color: transparent; /* fondo transparente */
+  color: #11312c;                /* texto verde oscuro */
+  border: 2px solid #11312c;     /* borde con color principal */
+  border-radius: 8px;            /* esquinas redondeadas */
+  padding: 8px 18px;             /* compensación para mantener el tamaño total con el borde de 2px */
+  cursor: pointer;               /* cursor tipo mano */
+  transition: all 0.2s ease;     /* transición suave al pasar el mouse */
+}
+
+.btn-outline:hover {
+  background-color: #11312c;    /* fondo verde oscuro al pasar el cursor */
+  color: #45fbd6;               /* texto menta neón */
+  border: 2px solid #45fbd6;     /* borde menta neón */
+}
+
+.btn-outline:disabled {
+  background-color: transparent;
+  color: #cccccc;
+  border: 2px solid #cccccc;
+  cursor: not-allowed;
+}
+.size-lrg{
+    size: 22px;
+}
+
+.alerta-borde-rojo {
+    border: 4px solid #b22234; /* Un rojo oscuro, similar al de la imagen */
+    border-radius: 12px;       /* Esquinas redondeadas */
+    background-color: white;   /* Fondo blanco limpio */
+    margin: 20px auto;         /* Centrado horizontal y margen superior/inferior */
+    max-width: 80%;           /* Limita el ancho para que no sea excesivo en pantallas grandes */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Sutil sombra opcional para profundidad */
+  }
+
+  .alerta-borde-rojo .card-header {
+    background-color: transparent !important; /* Quita el fondo por defecto */
+    border-bottom: none !important;        /* Quita la línea de borde inferior por defecto */
+    color: #b22234 !important;              /* Texto en el mismo color rojo */
+    font-weight: 900 !important;           /* Texto muy negrita */
+    font-size: 2rem !important;             /* Texto grande */
+    text-align: center !important;         /* Centrado */
+    padding: 20px 0 10px 0 !important;    /* Espaciado ajustado */
+    font-family: Noto Sans, sans-serif;         /* Una fuente limpia y gruesa */
+  }
+
+  .alerta-borde-rojo .card-body{
+    background-color: transparent !important; /* Quita el fondo por defecto */
+    border-bottom: none !important;        /* Quita la línea de borde inferior por defecto */
+    font-size: 1rem !important;             /* Texto grande */
+    text-align: center !important;         /* Centrado */
+    padding: 20px 0 10px 0 !important;    /* Espaciado ajustado */
+    font-family: Noto Sans, sans-serif;         /* Una fuente limpia y gruesa */
+  }
+
+.contenedor-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+
+/*!* Ajustes para que los interruptores se vean alineados y limpios *!*/
+/*.form-check.form-switch {*/
+/*    padding-left: 2.8em;*/
+/*    min-height: 1.5rem;*/
+/*}*/
+
+/*.form-check-input {*/
+/*    cursor: pointer;*/
+/*    border-color: #11312c;*/
+/*}*/
+
+/*.form-check-label {*/
+/*    cursor: pointer;*/
+/*    font-weight: 500;*/
+/*    color: #333;*/
+/*    padding-top: 2px;*/
+/*}*/
+
+/*!* Cambiar el color de enfoque/activación si no quieres el azul por defecto de Bootstrap *!*/
+/*.form-check-input:checked {*/
+/*    background-color: #45fbd6; !* Cambia por tu color corporativo *!*/
+/*    border-color: #45fbd6;*/
+/*}*/
+
+/*input[type="text"], input[type="url"] {*/
+/*    display: block;*/
+/*    width: 100%;*/
+/*    padding: .375rem .75rem;*/
+/*    font-size: 1rem;*/
+/*    font-weight: 400;*/
+/*    line-height: 1.5;*/
+/*    color: var(--bs-body-color);*/
+/*    -webkit-appearance: none;*/
+/*    -moz-appearance: none;*/
+/*    appearance: none;*/
+/*    background-color: var(--bs-body-bg);*/
+/*    background-clip: padding-box;*/
+/*    border: var(--bs-border-width) solid var(--bs-border-color);*/
+/*    border-radius: var(--bs-border-radius);*/
+/*    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;*/
+/*}*/
+
+/*input[type="text"], select {*/
+/*  width: 200px;   !* ancho del select *!*/
+/*  height: 40px;   !* alto del select *!*/
+/*  border-radius: var(--bs-border-radius);*/
+/*}*/
+
+option {
+  padding: 8px;   /* espacio interno de cada opción */
+  font-size: 14px; /* tamaño de texto dentro de las opciones */
+  border-radius: 8px;
+}
+
+/* Contenedor principal de las pestañas */
+.nav-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border-bottom: 2px solid #e2e8f0; /* Línea base gris */
+}
+
+.nav-tabs .tab-item {
+  margin-bottom: -2px; /* Alinea el borde activo sobre la línea principal */
+}
+
+/* Estilo general de los enlaces */
+.nav-tabs .tab-link {
+  display: inline-block;
+  padding: 12px 20px;
+  font-family: 'Noto Sans', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #64748b; /* Color de texto secundario */
+  text-decoration: none;
+  background-color: transparent;
+  border: none;
+  border-bottom: 3px solid transparent; /* Reserva espacio para el indicador */
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+/* Efecto al pasar el cursor (Hover) */
+.nav-tabs .tab-link:hover:not(.disabled) {
+  color: #1e293b;
+  border-bottom-color: #cbd5e1;
+}
+
+/* Pestaña activa */
+.nav-tabs .tab-link.active {
+  color: #2563eb; /* Azul primario (puedes cambiarlo a tu color) */
+  font-weight: 600;
+  border-bottom-color: #2563eb; /* Indicador activo */
+}
+
+/* Estado deshabilitado (opcional) */
+.nav-tabs .tab-link.disabled {
+  color: #cbd5e1;
+  cursor: not-allowed;
+}
+
+
+.texto-justificado {
+    text-align: justify;
+}

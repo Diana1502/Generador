@@ -1,0 +1,23 @@
+body {
+    height: 100vh;
+    background: linear-gradient(135deg, #004740, #45fbd6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.img-container {
+    padding: 2rem;
+    width: 20%;
+    max-width: 500px;
+    animation: fadeIn 0.6s ease-in-out;
+    position: absolute; /* importante para poder ubicarlo */
+    transform: translateY(-50%); /* ajuste para centrar */
+}
+
+.img-container img {
+    width: 100%;       /* ocupa todo el ancho del contenedor */
+    height: auto;      /* mantiene la proporción original */
+    display: block;    /* elimina espacios extra alrededor */
+    object-fit: cover;
+}

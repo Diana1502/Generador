@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Padrón de Sujetos Obligados</title>
+
+    <!-- Bootstrap 5.3.8 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/gnrl.css' %}">
+    <link rel="stylesheet" href="{% static 'css/principal.css' %}">
+    <link rel="stylesheet" href="{% static 'css/padron.css' %}">
+</head>
+<body class="bg-light py-5">
+
+    <div class="container">
+
+        <div class="row justify-content-center">
+            <div class="col-6">
+                <div class="img-container">
+                    <img src="../../static/img/LOGO DATOS PERSONALES-01.png">
+                </div>
+            </div>
+            <div class="col-6">
+                <h1 class="text-white">Padrón de Sujetos Obligados</h1>
+            </div>
+            <hr class="border-hr-dotted text-white">
+        </div>
+        <br>
+        <br>
+
+        <div class="row justify-content-center">
+            <div class="col-6">
+                <div class="card shadow-sm">
+                    <div class="card-header bg-d-gray py-3">
+                        <h5 class="mb-0">Selector por categoría</h5>
+                    </div>
+                    <div class="card-body p-4">
+
+                        <form id="form-catalogo" method="POST">
+                            {% csrf_token %}
+
+                            <!-- Este input oculto almacenará el ID final que el usuario elija -->
+                            <input type="hidden" name="elemento_final_id" id="elemento_final_id" value="">
+
+                            <!-- Contenedor general donde se irán inyectando los selectores en cascada -->
+                            <div id="selects-container" class="contenedor-selects">
+
+                                <!-- SELECT NIVEL 1: Siempre está visible y se carga desde Django -->
+                                <div class="mb-3 level-group" data-level="1">
+                                    <label for="select-level-1" class="form-label fw-semibold">Sección Principal (Nivel 1)</label>
+                                    <select id="select-level-1" class="form-select selector-cascada" data-level="1">
+                                        <option value="" selected disabled>-- Selecciona una sección --</option>
+                                        {% for seccion in secciones_raiz %}
+                                            <option value="{{ seccion.id }}">{{ seccion.nombre }}</option>
+                                        {% endfor %}
+                                    </select>
+                                </div>
+
+                            </div>
+
+                            <div class="mt-4 d-grid">
+                                <button type="button" id="btn-enviar" class="btn btn-custom btn-lg" disabled>
+                                    Guardar Selección
+                                </button>
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-1"></div>
+            <div class="col-5">
+                <div class="card shadow-sm">
+                    <div class="card-header bg-d-gray py-3">
+                        <h5 class="mb-0">Buscador</h5>
+                    </div>
+
+                    <div class="card-body p-4">
+                        <input
+                            type="text"
+                            id="input-buscador"
+                            class="form-control"
+                            placeholder="Escribe el nombre a buscar"
+                            autocomplete="off"
+                        >
+
+                        <!-- Input oculto para guardar el ID seleccionado para el formulario -->
+                        <input type="hidden" name="elemento_final1_id" id="elemento_final1_id" value="">
+
+                        <!-- Menú desplegable para los resultados -->
+                        <div id="lista-resultados" class="dropdown-menu w-100 shadow-sm" style="display: none; max-height: 250px; overflow-y: auto;">
+                        </div>
+
+                        <div class="mt-4 d-grid">
+                            <button type="button" id="btn-enviar-buscador" class="btn btn-custom btn-lg" disabled>
+                                Guardar Selección
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+    <div id="confirmModal" class="modal-overlay">
+        <div class="confirm-modal">
+            <div class="confirm-icon">?</div>
+
+            <h2>¿Estás seguro?</h2>
+
+            <p id="sujetoSeleccionado"></p>
+
+            <div class="confirm-actions">
+                <button id="btnCancelar" class="btn btn-cancelar">
+                    Cancelar
+                </button>
+
+                <button id="btnAceptar" class="btn btn-custom" value="{{ cuestionario_id }}">
+                    Aceptar
+                </button>
+            </div>
+        </div>
+    </div>
+
+    {% load static %}
+    <script type="module" src="{% static 'js/padronso.js' %}"></script>
+</body>
+</html>

@@ -1,0 +1,220 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container mt-5">
+    <h3>Cuestionario</h3>
+
+    <div class="row">
+        <!-- Content -->
+        <div class="col-md-7 col-lg-8 p-4">
+            <!-- Nav Pills -->
+            <ul class="nav nav-tabs nav-justified">
+                {% for i in "123456789101" %}
+                <li class="nav-item">
+                    <a class="nav-link"
+                       data-section="{{ forloop.counter }}"
+                       href="{% url 'apps.cuestionarios:seccion' cuestionario.id forloop.counter %}">
+                       {{ forloop.counter }}
+                    </a>
+                </li>
+                {% endfor %}
+            </ul>
+
+            <br>
+            <!-- Tab Content -->
+            <form method="post">
+                {% csrf_token %}
+
+                <div class="card mb-4">
+                    <div class="card-header">II. Datos personales sometidos a tratamiento, identificando los que son sensibles /¿Qué datos personales se recaban?</div>
+                    <div class="card-body contenedor-grid">
+
+                        <div class="row">
+                            <h5>Datos personales</h5>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                 <label>
+                                    ¿Qué dato estas recopilando?
+                                </label>
+                                <input type="text" id="dato" class="form-control">
+                            </div>
+                            <div class="col-md-6">
+                                <label>
+                                    ¿Es un dato sensible?
+                                </label>
+                                <select id="datosSensibles" class="form-select">
+                                    <option value="true">
+                                        Sí
+                                    </option>
+                                    <option value="false">
+                                        No
+                                    </option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <h5>Obtención</h5>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label>
+                                    ¿Cómo se obtuvieron los datos?
+                                </label>
+                                <select id="obtencionDatos" class="form-select">
+                                    <option value="T">Directamente del titular</option>
+                                    <option value="E">Representante legal</option>
+                                    <option value="A">Otra autoridad</option>
+                                    <option value="D">Otra dependencia</option>
+                                    <option value="P">Fuente pública</option>
+                                    <option value="W">Plataforma electrónica</option>
+                                    <option value="R">Tercero autorizado</option>
+                                    <option value="O">Otro</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6" style="display: none">
+                                <label>
+                                ¿Cuál?
+                                </label>
+                                <input type="text" id="otroObtencionDatos" class="form-control">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label>
+                                ¿Con que medio se obtuvieron los datos?
+                                </label>
+                                <select id="medioObtencion"  class="form-select">
+                                    <option value="F">Formulario</option>
+                                    <option value="E">Ventanilla</option>
+                                    <option value="C">Correo electrónico</option>
+                                    <option value="S">Sistema</option>
+                                    <option value="A">Aplicación</option>
+                                    <option value="W">Portal web</option>
+                                    <option value="L">Llamada telefónica</option>
+                                    <option value="V">Videollamada</option>
+                                    <option value="D">Documento físico</option>
+                                    <option value="O">Otro</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6" style="display: none">
+                                <label>
+                                    ¿Cuál?
+                                </label>
+                                <input type="text" id="otroMedioObtencion" class="form-control">
+                            </div>
+                        </div>
+
+                        <hr>
+
+                        <div class="row justify-content-end">
+                            <div class="col-2">
+                                <button type="button" id="btnAgregar" class="btn btn-custom">
+                                    Agregar
+                                </button>
+                            </div>
+
+                            <div class="col-3">
+                                <button type="button" id="btnLimpiar" class="btn btn-custom">
+                                    Limpiar campos
+                                </button>
+                            </div>
+
+                            <div class="col-3">
+                                <button type="button" id="btnModificar" class="btn btn-custom">
+                                    Guardar cambios
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="btns-div">
+                    <button class="btn btn-custom" type="submit">Siguiente</button>
+                </div>
+
+                <br>
+            
+            </form>
+
+            <div class="card mb-4">
+                <div class="card-body">
+                    <table class="table table-bordered align-middle">
+                        <thead class="table-light">
+                                <tr>
+                                    <th>Dato</th>
+                                    <th>Tipo de dato</th>
+                                    <th>Obtención</th>
+                                    <th>Acción</th>
+                                </tr>
+                        </thead>
+                        <tbody id="tablaFundamentosInv">
+
+                            {% for fundamento in fundamentos %}
+
+                                <tr id="fundamentoInv-{{ fundamento.id }}">
+
+                                    <td>
+                                        <p>{{ fundamento.dato }}</p>
+                                    </td>
+
+                                    <td>
+                                        {% if fundamento.datosSensibles %}
+                                            Sensible
+                                        {% endif %}
+                                    </td>
+
+                                    <td>
+
+                                        <p>{{ fundamento.get_obtencionDatos_display }}</p>
+                                        <p>{{ fundamento.get_medioObtencion_display }}</p>
+
+                                    </td>
+
+                                    <td>
+
+                                        <button class="btn btn-danger btnEliminar"
+                                                data-id="{{ fundamento.id }}">
+                                            Eliminar
+                                        </button>
+
+                                        <br><br>
+
+                                        <button class="btn btn-warning btnEditar"
+                                                data-id="{{ fundamento.id }}">
+                                            Editar
+                                        </button>
+
+                                    </td>
+
+                                </tr>
+
+                            {% endfor %}
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+        <!-- Sidebar -->
+        <div class="col-md-5 col-lg-4 bg-light border-start" id="sidebar">
+            <br><br><br><br>
+            <div class="collapse show" id="sidebarContent">
+                <p class="texto-justificado">
+                    El aviso de privacidad deberá contener, al menos, la siguiente información: <b>(Artículo 21.)</b>
+                    <br><br>
+                    <b>II. Los datos personales que serán sometidos a tratamiento, identificando aquéllos que son sensibles;</b>
+                    <br>
+                    <b>Datos personales:</b> Cualquier información concerniente a una persona identificada o identificable. Se considera que una persona es identificable cuando su identidad pueda determinarse directa o indirectamente a través de cualquier información;
+                    <br>
+                    <b>Datos personales sensibles:</b> Aquellos que se refieran a la esfera más íntima de su titular, o cuya utilización indebida pueda dar origen a discriminación o conlleve un riesgo grave para ésta.
+                    <br>
+                    De manera enunciativa más no limitativa, se consideran sensibles los datos personales que puedan revelar aspectos como origen racial o étnico, estado de salud presente o futuro, información genética, creencias religiosas, filosóficas y morales, opiniones políticas y preferencia sexual;
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
