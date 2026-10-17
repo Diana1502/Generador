@@ -22,6 +22,8 @@ def cerrar_sesiones_simultaneas(sender, user, request, **kwargs):
 
     clave_sesion_actual = request.session.session_key
 
+
+
     #Obtenemos todas las sesiones activas en la base de datos
     sesiones_activas = Session.objects.filter(expire_date__gte=timezone.now())
 
