@@ -298,21 +298,21 @@ export function init() {
         btnModificar.dataset.id = data.id;
 
         document.querySelector("#destinatario").value = data.destinatario;
-        document.querySelector("#consentimiento").value = data.consentimiento;
+        document.querySelector("#consentimiento").value = String(data.consentimiento);
         document.querySelector("#tipoConsentimiento").value = data.tipoConsentimiento;
 
-        // Recorremos todos los checkboxes
         document.querySelectorAll('.finalidadCheck').forEach(input => {
-            // Obtenemos el texto del label asociado
-            const labelText = input.nextElementSibling.textContent.trim();
+            const fila = input.closest('.row');
+            const labelText = fila.querySelector('label').textContent.trim();
 
-            // Verificamos si el texto está en el JSON
-            const isSelected = data.finalidades.some(arr => arr[0] === labelText);
+            // Verificar si la finalidad está en el JSON
+            const existe = data.finalidades.flat().includes(labelText);
 
-            // Marcamos el checkbox si coincide
-            if (isSelected) {
-                input.checked = true;
-            }
+            // console.log("finalidades:", data.finalidades);
+            // console.log("Finalidad:", labelText);
+            // console.log("¿Existe en JSON?:", existe);
+
+            input.checked = existe;
         });
     }
 

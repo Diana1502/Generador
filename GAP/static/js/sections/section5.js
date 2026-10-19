@@ -244,11 +244,11 @@ export function init() {
         };
     }
 
-    function agregarFila(data) {
+    function agregarFila1(data) {
         // Construir Necesaria
         const necesariaHtml = data.necesaria
         ? "Necesaria"
-        : "-";
+        : "No";
 
         // Construir Consentimiento
         const consentimientoHtml = data.reqConsentimiento
@@ -298,12 +298,78 @@ export function init() {
         `;
     }
 
+
+    function agregarFila(data) {
+
+        // Construir Necesaria
+        const necesariaHtml = data.necesaria
+            ? "Necesaria"
+            : "No";
+
+        // Construir Consentimiento
+        let consentimientoHtml;
+
+        if (data.necesaria) {
+            consentimientoHtml = "No aplica";
+        } else if (data.reqConsentimiento) {
+            consentimientoHtml = `
+                <p>Requiere consentimiento</p>
+                ${data.tipoConsentimiento}
+            `;
+        } else {
+            consentimientoHtml = "No";
+        }
+
+        // Construir tipoFinalidad - BadgesHTML
+        const BadgesHTML = data.finPrincipal
+            ? '<span class="badge bg-success me-1">Principal</span>'
+            : '<span class="badge bg-secondary me-1">Secundaria</span>';
+
+        // Agregar fila a la tabla
+        const tabla = document.getElementById("tablaFinalidadesInv");
+
+        tabla.insertAdjacentHTML("beforeend", `
+            <tr id="finalidadInv-${data.id}">
+                <td>
+                    ${data.finalidad}
+                    <br>
+                    ${BadgesHTML}
+                </td>
+                <td>
+                    <p>${necesariaHtml}</p>
+                </td>
+                <td>
+                    ${consentimientoHtml}
+                </td>
+                <td>
+                    <button
+                        class="btn btn-danger btnEliminar"
+                        data-id="${data.id}">
+                        Eliminar
+                    </button>
+                    <br><br>
+                    <button
+                        class="btn btn-warning btnEditar"
+                        data-id="${data.id}">
+                        Editar
+                    </button>
+                </td>
+            </tr>
+        `);
+    }
+
+
     function actualizarFila(data) {
         console.log(data);
         // Buscar fila
         const fila = document.querySelector(
-                    `#datoInv-${data.id}`
+                    `#finalidadInv-${data.id}`
                 );
+        // Verificar que exista
+        if (!fila) {
+            console.error(`No se encontró la fila con ID datoInv-${data.id}`);
+            return;
+        }
 
          // Construir Necesaria
         const necesariaHtml = data.necesaria
@@ -311,9 +377,18 @@ export function init() {
         : "No";
 
         // Construir Consentimiento
-        const consentimientoHtml = data.reqConsentimiento
-        ? "Requiere consentimiento"
-        : "No";
+        let consentimientoHtml;
+
+        if (data.necesaria) {
+            consentimientoHtml = "No aplica";
+        } else if (data.reqConsentimiento) {
+            consentimientoHtml = `
+                <p>Requiere consentimiento</p>
+                ${data.tipoConsentimiento}
+            `;
+        } else {
+            consentimientoHtml = "No";
+        }
 
         // Construir finPrincipal
         // Determinar la clase y el texto según el booleano
@@ -323,7 +398,7 @@ export function init() {
 
         // Actualizar fila de la tabla
 
-        fila.innerHTML += `
+        fila.innerHTML = `
             <tr id="finalidadInv-${data.id}">
                 <td>
                     ${data.finalidad}
@@ -335,7 +410,6 @@ export function init() {
                 </td>
                 <td>
                     <p>${consentimientoHtml}</p>
-                    ${data.tipoConsentimiento}
                 </td>
                 <td>
                     <button
