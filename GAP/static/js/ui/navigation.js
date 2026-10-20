@@ -9,6 +9,11 @@ export function initNavigation() {
 
     links.forEach((link) => {
 
+        // NUEVA LÍNEA: Si el enlace no tiene un data-section (como el Logout), lo ignoramos
+        if (!link.hasAttribute('data-section')) {
+        return;
+    }
+
         const section = parseInt(link.dataset.section);
 
         // limpiar clases

@@ -160,3 +160,9 @@ label input[type="checkbox"] {
   accent-color: #0078D4;      /* color moderno para el check (soportado en navegadores recientes) */
 }
 
+#recuperacion{
+    font-size: 0.75rem;
+    margin-top: 0.5rem;
+}
+
+
