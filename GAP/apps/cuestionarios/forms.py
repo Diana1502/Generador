@@ -329,7 +329,8 @@ class SecEjercicioARCOForm(forms.ModelForm):
             'entidadFed_unidadresp',
             'codigoPost_unidadresp',
             'correo',
-            'telefono'
+            'telefono',
+            'extension'
         ]
 
         # widgets = {
@@ -465,6 +466,7 @@ class SecUTForm(forms.ModelForm):
         fields = [
             'telefono',
             'correo',
+            'extension',
             'horarioInicio',
             'horarioFin',
             'paginaWeb',
