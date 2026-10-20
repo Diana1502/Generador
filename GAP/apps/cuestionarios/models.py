@@ -120,7 +120,7 @@ class DatoPersonal(models.Model):
         ('O', 'Otro '),
     ]
     obtencionDatos = MultiSelectField(max_length=8, choices=TIPO_OBTENCION,  blank=True)
-    obtencionDatos_otro = models.CharField(max_length=255, blank=True, null=True, verbose_name="Otra fuente de info")
+    # obtencionDatos_otro = models.CharField(max_length=255, blank=True, null=True, verbose_name="Otra fuente de info")
 
     TIPO_MEDIO = [
         ('', 'Seleccione una opción'),
@@ -136,7 +136,7 @@ class DatoPersonal(models.Model):
         ('O', 'Otro '),
     ]
     medioObtencion = models.CharField(max_length=1, choices=TIPO_MEDIO,  blank=True, null=True)
-    medioObtencion_otro = models.CharField(max_length=255, blank=True, null=True, verbose_name="Otro medio de obtención")
+    # medioObtencion_otro = models.CharField(max_length=255, blank=True, null=True, verbose_name="Otro medio de obtención")
 
     def __str__(self):
         return f"{self.dato}{' - sensible' if self.datosSensibles else ''}"
@@ -177,7 +177,7 @@ class Finalidad(models.Model):
         ('E', 'Expreso'),
     ]
     tipoConsentimiento = models.CharField(max_length=1, choices=TIPO_CONSENTIMIENTO, blank=True, null=True)
-    tipoConsentimiento_otro = models.CharField(max_length=255, blank=True, null=True, verbose_name="Otro tipo de consentimiento")
+    # tipoConsentimiento_otro = models.CharField(max_length=255, blank=True, null=True, verbose_name="Otro tipo de consentimiento") ## Bye
 
     def __str__(self):
         return f"{self.finalidad}{' - Principal' if self.finPrincipal else ''}"

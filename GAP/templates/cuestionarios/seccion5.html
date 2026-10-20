@@ -157,20 +157,30 @@
                                             </span>
                                         {% endif %}
                                     </td>
-                                    <td>
-                                        {% if finalid.necesaria %}
-                                        <p>Necesaria</p>
-                                        {% else %}
-                                        <p>No</p>
-                                        {% endif %}
-                                    </td>
-                                    <td>
-                                        {% if finalid.reqConsentimiento %}
-                                        <p>Requiere consentimiento </p> {{ finalid.get_tipoConsentimiento_display }}
-                                        {% else %}
-                                        <p>No</p>
-                                        {% endif %}
-                                    </td>
+                                    {% if finalid.necesaria %}
+                                        <td>
+                                            <p>Necesaria</p>
+                                        </td>
+                                        <td>
+                                            <p>No aplica</p>
+                                        </td>
+                                    {% else %}
+                                        <td>
+                                            <p>No</p>
+                                        </td>
+                                        <td>
+                                            {% if finalid.reqConsentimiento %}
+                                            <p>Requiere consentimiento </p> {{ finalid.get_tipoConsentimiento_display }}
+                                            {% else %}
+                                            <p>No</p>
+                                            {% endif %}
+                                        </td>
+                                    {% endif %}
+
+
+
+
+
                                     <td>
                                         <button class="btn btn-danger btnEliminar"
                                                 data-id="{{ finalid.id }}">
