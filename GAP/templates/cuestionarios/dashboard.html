@@ -87,14 +87,14 @@
                                 {% if cuestionario.completado %}
                                     <div class="d-inline-flex gap-2">
                                         <a href="/word/integral/{{ cuestionario.id }}/"
-                                           class="btn btn-sm btn-dark d-inline-flex align-items-center gap-1"
+                                           class="btn btn-sm btn-dark d-inline-flex align-items-center gap-1 btn-descargar-word"
                                            title="Descargar versión integral">
                                             <i class="bi bi-file-earmark-word-fill"></i>
                                             <span>Integral</span>
                                         </a>
 
                                         <a href="/word/simplificado/{{ cuestionario.id }}/"
-                                           class="btn btn-sm btn-outline-success d-inline-flex align-items-center gap-1"
+                                           class="btn btn-sm btn-outline-success d-inline-flex align-items-center gap-1 btn-descargar-word"
                                            title="Descargar versión simplificada">
                                             <i class="bi bi-file-earmark-text-fill"></i>
                                             <span>Simplificado</span>
@@ -164,6 +164,55 @@
             {% endif %}
         </div>
         {% endif %}
+    </div>
+
+    <!--Pop up Disclaimer-->
+    <div class="modal fade" id="modalDisclaimer" tabindex="-1" aria-labelledby="modalDisclaimerLabel" aria-hidden="true">
+
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalDisclaimerLabel">
+                        <i class="bi bi-info-circle me-2"></i>
+                        Aviso importante
+                    </h5>
+                    <button type="button" class="btn-close"
+                            data-bs-dismiss="modal"
+                            aria-label="Cerrar"></button>
+                </div>
+
+                <div class="modal-body">
+                    <p>
+                        El documento generado contiene información
+                        proporcionada durante el llenado del cuestionario.
+                    </p>
+
+                    <p>
+                        Es responsabilidad del usuario revisar y validar
+                        el contenido antes de su publicación o utilización.
+                    </p>
+
+                    <p class="mb-0">
+                        ¿Deseas continuar con la descarga?
+                    </p>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-secondary"
+                            data-bs-dismiss="modal">
+                        Cancelar
+                    </button>
+
+                    <button type="button" class="btn btn-custom"
+                            id="confirmarDescarga">
+                        <i class="bi bi-download me-1"></i>
+                        Aceptar y descargar
+                    </button>
+                </div>
+
+            </div>
+        </div>
     </div>
     
     <div class="row">

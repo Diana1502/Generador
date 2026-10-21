@@ -7,7 +7,6 @@ from docx.enum.table import WD_TABLE_ALIGNMENT
 from io import BytesIO
 from django.http import FileResponse
 
-
 import os
 
 import docx
@@ -193,7 +192,6 @@ class GeneradorAvisoPrivacidad:
 
         doc.add_paragraph("", style='Parraf')
 
-        # doc.save(self.docto)
         nuevo_buffer = BytesIO()
         doc.save(nuevo_buffer)
 
@@ -284,36 +282,39 @@ class GeneradorAvisoPrivacidad:
         #     doc.add_paragraph("", style='Parraf')
         #     print(data.dato)
 
-        # ----------------- tabla
-        tabla =doc.add_table(rows=1, cols=3)
+        if not sec2:
+            doc.add_paragraph("No se especificaron datos personales.", style='Vineta')
+        else:
+            # ----------------- tabla
+            tabla =doc.add_table(rows=1, cols=3)
 
-        encabezados = ["Dato personal", "Tipo de dato", "Medio de obtención"]
+            encabezados = ["Dato personal", "Tipo de dato", "Medio de obtención"]
 
-        for celda, texto in zip(tabla.rows[0].cells, encabezados):
-            celda.text = texto
-            # self.color_celda(celda, "E5E5E5")
-            self.borde_inferior(celda, color="808080", grosor="8")
+            for celda, texto in zip(tabla.rows[0].cells, encabezados):
+                celda.text = texto
+                # self.color_celda(celda, "E5E5E5")
+                self.borde_inferior(celda, color="808080", grosor="8")
 
-            for parrafo in celda.paragraphs:
-                parrafo.style = "EncabezadoTabla"
-
-        for i, data in enumerate(sec2):
-            celdas = tabla.add_row().cells
-
-            celdas[0].text = data.dato
-            celdas[1].text = "Sensibles" if data.datosSensibles else "No sensible"
-            celdas[2].text = data.get_medioObtencion_display()
-
-            # Alternar colores
-            if i % 2 == 1:
-                for celda in celdas:
-                    self.color_celda(celda, "E5E5E5")
-
-            # Aplicar estilo a todas las celdas
-            for celda in celdas:
                 for parrafo in celda.paragraphs:
-                    parrafo.style = "Parraf"
-        # ----------------- tabla
+                    parrafo.style = "EncabezadoTabla"
+
+            for i, data in enumerate(sec2):
+                celdas = tabla.add_row().cells
+
+                celdas[0].text = data.dato
+                celdas[1].text = "Sensibles" if data.datosSensibles else "No sensible"
+                celdas[2].text = data.get_medioObtencion_display()
+
+                # Alternar colores
+                if i % 2 == 1:
+                    for celda in celdas:
+                        self.color_celda(celda, "E5E5E5")
+
+                # Aplicar estilo a todas las celdas
+                for celda in celdas:
+                    for parrafo in celda.paragraphs:
+                        parrafo.style = "Parraf"
+            # ----------------- tabla
 
         doc.add_paragraph("", style='Parraf')
 
@@ -329,7 +330,6 @@ class GeneradorAvisoPrivacidad:
                           style='Parraf')
         doc.add_paragraph("", style='Parraf')
 
-        # doc.save(self.docto)
         nuevo_buffer = BytesIO()
         doc.save(nuevo_buffer)
 
@@ -353,16 +353,13 @@ class GeneradorAvisoPrivacidad:
 
         if not sec3:
             doc.add_paragraph("No se especificaron fundamentos legales.", style='Vineta')
-            return
-
-        print(sec3)
-        for fundamento in sec3:
-            doc.add_paragraph(fundamento.especificacion+" de la "+fundamento.ley, style='Vineta')
-            print(fundamento.ley)
+        else:
+            for fundamento in sec3:
+                doc.add_paragraph(fundamento.especificacion+" de la "+fundamento.ley, style='Vineta')
+                print(fundamento.ley)
 
         doc.add_paragraph("", style='Parraf')
 
-        # doc.save(self.docto)
         nuevo_buffer = BytesIO()
         doc.save(nuevo_buffer)
 
@@ -390,7 +387,6 @@ class GeneradorAvisoPrivacidad:
 
         if not sec4:
             doc.add_paragraph("No se especificaron finalidades.", style='Vineta')
-            return
         else:
             if numero == "II":
                 for fin in sec4:
@@ -444,7 +440,6 @@ class GeneradorAvisoPrivacidad:
         #
         # doc.add_paragraph("", style='Parraf')
 
-        # doc.save(self.docto)
         nuevo_buffer = BytesIO()
         doc.save(nuevo_buffer)
 
@@ -469,7 +464,7 @@ class GeneradorAvisoPrivacidad:
 
         p = doc.add_paragraph(style='Parraf')
         p.add_run("Usted podrá ejercer sus derechos de acceso, rectificación, cancelación u oposición de sus datos personales directamente ante la Unidad de Transparencia de la ")
-        p.add_run(self.respuestas['sujetoObligado']+", ubicada en "+sec6.direccion_texto()+"; número telefónico y extensión: ")
+        p.add_run(self.respuestas['sujetoObligado']+", ubicada en "+sec6.direccion_texto())
         p.add_run("; número telefónico y extensión: "+sec6.telefono_texto()+", extensiones "+sec6.extension)
         p.add_run(", correo electrónico "+sec6.correo+".")
         # self.add_hyperlink(p, "https://www.plataformadetransparencia.org.mx/web/guest/inicio","https://www.plataformadetransparencia.org.mx/web/guest/inicio")
@@ -490,7 +485,6 @@ class GeneradorAvisoPrivacidad:
         print(sec5)
         print(sec6)
 
-        # doc.save(self.docto)
         nuevo_buffer = BytesIO()
         doc.save(nuevo_buffer)
 
@@ -516,9 +510,6 @@ class GeneradorAvisoPrivacidad:
             run_text=""
         )
         p_titulo.add_run(" /¿A quién se transfieren los datos personales?")
-
-
-
 
         if sec7 and sec7.exists():
             # ----------------- tabla
@@ -566,7 +557,6 @@ class GeneradorAvisoPrivacidad:
 
         # print(sec7)
 
-        # doc.save(self.docto)
         nuevo_buffer = BytesIO()
         doc.save(nuevo_buffer)
 
@@ -595,7 +585,7 @@ class GeneradorAvisoPrivacidad:
         # doc.add_paragraph('No obstante, para cualquier asunto relacionado también podrá establecer comunicación directa al correo electrónico ...', style='Parraf')
         #
         # doc.add_paragraph("", style='Parraf')
-        # doc.save(self.docto)
+
         nuevo_buffer = BytesIO()
         doc.save(nuevo_buffer)
 
@@ -639,7 +629,7 @@ class GeneradorAvisoPrivacidad:
         self.add_hyperlink(p, sec9.url, sec9.url)
 
         doc.add_paragraph("", style='Parraf')
-        # doc.save(self.docto)
+
         nuevo_buffer = BytesIO()
         doc.save(nuevo_buffer)
 
@@ -671,7 +661,7 @@ class GeneradorAvisoPrivacidad:
         p.add_run(".")
 
         doc.add_paragraph("", style='Parraf')
-        # doc.save(self.docto)
+
         nuevo_buffer = BytesIO()
         doc.save(nuevo_buffer)
 
@@ -701,7 +691,6 @@ class GeneradorAvisoPrivacidad:
             doc.add_paragraph("Este tratamiento de datos personales no se encuentra en formatos estructurados y comúnmente utilizados para su portabilidad, en términos de lo dispuesto en los artículos 51 de la Ley General de Datos que establece los parámetros, y procedimientos para la portabilidad de datos personales.", style='Parraf')
 
         doc.add_paragraph("", style='Parraf')
-        # doc.save(self.docto)
         nuevo_buffer = BytesIO()
         doc.save(nuevo_buffer)
 
@@ -734,7 +723,6 @@ class GeneradorAvisoPrivacidad:
 
             doc.add_paragraph("", style='Parraf')
 
-        # doc.save(self.docto)
         nuevo_buffer = BytesIO()
         doc.save(nuevo_buffer)
 
@@ -748,7 +736,6 @@ class GeneradorAvisoPrivacidad:
         p = doc.add_paragraph(style='Fech')
         p.add_run("Fecha de elaboración: ").bold = True
         p.add_run(self.respuestas['fechahoy'])
-        # doc.save(self.docto)
         nuevo_buffer = BytesIO()
         doc.save(nuevo_buffer)
 
@@ -773,7 +760,6 @@ class GeneradorAvisoPrivacidad:
         ruta_plantilla = (settings.PLANTILLAS_DOCX/ "plantillaAvp.docx")
         doc = DocxTemplate(ruta_plantilla)
 
-        # self.docto = Path(settings.BASE_DIR) / nombrearchivo
         self.docto = BytesIO()
         doc.save(self.docto)
         self.docto.seek(0)
