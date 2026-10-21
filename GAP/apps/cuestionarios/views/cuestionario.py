@@ -224,6 +224,8 @@ def seccion(request, cuestionario_id, numero):
 
             if numero == 12:
                 cuestionario.completado = True
+                cuestionario.save()
+                return redirect('apps.cuestionarios:dashboard')
 
             cuestionario.save()
 

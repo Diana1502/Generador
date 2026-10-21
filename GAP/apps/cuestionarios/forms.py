@@ -653,7 +653,7 @@ class SecInfoComplForm(forms.ModelForm):
         label=mark_safe("Observaciones adicionales"),
         widget=forms.Textarea(attrs={
             'class': 'form-control',
-            'rows': 4,
+            'rows': 5,
             'placeholder': 'Escribe las observaciones aquí...'
         }),
         required=False
