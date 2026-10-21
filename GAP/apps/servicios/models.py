@@ -4,6 +4,10 @@ from django.conf import settings
 from docxtpl import DocxTemplate
 from docx.enum.table import WD_TABLE_ALIGNMENT
 
+from io import BytesIO
+from django.http import FileResponse
+
+
 import os
 
 import docx
@@ -181,6 +185,7 @@ class GeneradorAvisoPrivacidad:
 
     ##### SECCIONES
     def escribir_titulo(self, tipo):
+        self.docto.seek(0)
         doc = docx.Document(self.docto)
 
         doc.add_paragraph("AVISO DE PRIVACIDAD "+ tipo, style='superTit')
@@ -188,9 +193,15 @@ class GeneradorAvisoPrivacidad:
 
         doc.add_paragraph("", style='Parraf')
 
-        doc.save(self.docto)
+        # doc.save(self.docto)
+        nuevo_buffer = BytesIO()
+        doc.save(nuevo_buffer)
+
+        nuevo_buffer.seek(0)
+        self.docto = nuevo_buffer
 
     def escribir_seccion1(self, sec1):
+        self.docto.seek(0)
         doc = docx.Document(self.docto)
 
         p_titulo = doc.add_paragraph(style='Titu')
@@ -212,9 +223,15 @@ class GeneradorAvisoPrivacidad:
 
         doc.add_paragraph(self.respuestas['nombreTratamiento'], style='Parraf')
         doc.add_paragraph("", style='Parraf')
-        doc.save(self.docto)
+        # doc.save(self.docto)
+        nuevo_buffer = BytesIO()
+        doc.save(nuevo_buffer)
+
+        nuevo_buffer.seek(0)
+        self.docto = nuevo_buffer
 
     def escribir_seccion2(self, sec2):
+        self.docto.seek(0)
         doc = docx.Document(self.docto)
 
         p_titulo = doc.add_paragraph(style='Titu')
@@ -312,9 +329,15 @@ class GeneradorAvisoPrivacidad:
                           style='Parraf')
         doc.add_paragraph("", style='Parraf')
 
-        doc.save(self.docto)
+        # doc.save(self.docto)
+        nuevo_buffer = BytesIO()
+        doc.save(nuevo_buffer)
+
+        nuevo_buffer.seek(0)
+        self.docto = nuevo_buffer
 
     def escribir_seccion3(self, sec3):
+        self.docto.seek(0)
         doc = docx.Document(self.docto)
 
         p_titulo = doc.add_paragraph(style='Titu')
@@ -339,9 +362,15 @@ class GeneradorAvisoPrivacidad:
 
         doc.add_paragraph("", style='Parraf')
 
-        doc.save(self.docto)
+        # doc.save(self.docto)
+        nuevo_buffer = BytesIO()
+        doc.save(nuevo_buffer)
+
+        nuevo_buffer.seek(0)
+        self.docto = nuevo_buffer
 
     def escribir_seccion4(self, sec4, numero = "IV"):
+        self.docto.seek(0)
         doc = docx.Document(self.docto)
 
         p_titulo = doc.add_paragraph(style='Titu')
@@ -415,9 +444,15 @@ class GeneradorAvisoPrivacidad:
         #
         # doc.add_paragraph("", style='Parraf')
 
-        doc.save(self.docto)
+        # doc.save(self.docto)
+        nuevo_buffer = BytesIO()
+        doc.save(nuevo_buffer)
+
+        nuevo_buffer.seek(0)
+        self.docto = nuevo_buffer
 
     def escribir_seccion5_6(self, sec5, sec6):
+        self.docto.seek(0)
         doc = docx.Document(self.docto)
 
         p_titulo = doc.add_paragraph(style='Titu')
@@ -455,7 +490,12 @@ class GeneradorAvisoPrivacidad:
         print(sec5)
         print(sec6)
 
-        doc.save(self.docto)
+        # doc.save(self.docto)
+        nuevo_buffer = BytesIO()
+        doc.save(nuevo_buffer)
+
+        nuevo_buffer.seek(0)
+        self.docto = nuevo_buffer
 
     # Función para colorear celdas
     def color_celda(self, celda, color):
@@ -465,6 +505,7 @@ class GeneradorAvisoPrivacidad:
         tcPr.append(shd)
 
     def escribir_seccion7(self, sec7, numero = "VII"):
+        self.docto.seek(0)
         doc = docx.Document(self.docto)
 
         p_titulo = doc.add_paragraph(style='Titu')
@@ -525,9 +566,15 @@ class GeneradorAvisoPrivacidad:
 
         # print(sec7)
 
-        doc.save(self.docto)
+        # doc.save(self.docto)
+        nuevo_buffer = BytesIO()
+        doc.save(nuevo_buffer)
+
+        nuevo_buffer.seek(0)
+        self.docto = nuevo_buffer
 
     def escribir_seccion8(self, sec8, numero = "VIII"):
+        self.docto.seek(0)
         doc = docx.Document(self.docto)
 
         p_titulo = doc.add_paragraph(style='Titu')
@@ -548,9 +595,15 @@ class GeneradorAvisoPrivacidad:
         # doc.add_paragraph('No obstante, para cualquier asunto relacionado también podrá establecer comunicación directa al correo electrónico ...', style='Parraf')
         #
         # doc.add_paragraph("", style='Parraf')
-        doc.save(self.docto)
+        # doc.save(self.docto)
+        nuevo_buffer = BytesIO()
+        doc.save(nuevo_buffer)
+
+        nuevo_buffer.seek(0)
+        self.docto = nuevo_buffer
 
     def escribir_seccion9(self, sec9):
+        self.docto.seek(0)
         doc = docx.Document(self.docto)
 
         p_titulo = doc.add_paragraph(style='Titu')
@@ -586,10 +639,16 @@ class GeneradorAvisoPrivacidad:
         self.add_hyperlink(p, sec9.url, sec9.url)
 
         doc.add_paragraph("", style='Parraf')
-        doc.save(self.docto)
+        # doc.save(self.docto)
+        nuevo_buffer = BytesIO()
+        doc.save(nuevo_buffer)
+
+        nuevo_buffer.seek(0)
+        self.docto = nuevo_buffer
 
 
     def escribir_conocerAvP(self, sec9):
+        self.docto.seek(0)
         doc = docx.Document(self.docto)
 
         p_titulo = doc.add_paragraph(style='Titu')
@@ -612,9 +671,15 @@ class GeneradorAvisoPrivacidad:
         p.add_run(".")
 
         doc.add_paragraph("", style='Parraf')
-        doc.save(self.docto)
+        # doc.save(self.docto)
+        nuevo_buffer = BytesIO()
+        doc.save(nuevo_buffer)
+
+        nuevo_buffer.seek(0)
+        self.docto = nuevo_buffer
 
     def escribir_portabilidad(self, secPortabilidad):
+        self.docto.seek(0)
         doc = docx.Document(self.docto)
 
         p_titulo = doc.add_paragraph(style='Titu')
@@ -636,9 +701,15 @@ class GeneradorAvisoPrivacidad:
             doc.add_paragraph("Este tratamiento de datos personales no se encuentra en formatos estructurados y comúnmente utilizados para su portabilidad, en términos de lo dispuesto en los artículos 51 de la Ley General de Datos que establece los parámetros, y procedimientos para la portabilidad de datos personales.", style='Parraf')
 
         doc.add_paragraph("", style='Parraf')
-        doc.save(self.docto)
+        # doc.save(self.docto)
+        nuevo_buffer = BytesIO()
+        doc.save(nuevo_buffer)
+
+        nuevo_buffer.seek(0)
+        self.docto = nuevo_buffer
 
     def escribir_infoAdicional(self, observaciones):
+        self.docto.seek(0)
         doc = docx.Document(self.docto)
 
         doc.add_paragraph("Información adicional", style='Titu')
@@ -663,15 +734,26 @@ class GeneradorAvisoPrivacidad:
 
             doc.add_paragraph("", style='Parraf')
 
-        doc.save(self.docto)
+        # doc.save(self.docto)
+        nuevo_buffer = BytesIO()
+        doc.save(nuevo_buffer)
+
+        nuevo_buffer.seek(0)
+        self.docto = nuevo_buffer
 
     def escribir_fecha(self):
+        self.docto.seek(0)
         doc = docx.Document(self.docto)
 
         p = doc.add_paragraph(style='Fech')
         p.add_run("Fecha de elaboración: ").bold = True
         p.add_run(self.respuestas['fechahoy'])
-        doc.save(self.docto)
+        # doc.save(self.docto)
+        nuevo_buffer = BytesIO()
+        doc.save(nuevo_buffer)
+
+        nuevo_buffer.seek(0)
+        self.docto = nuevo_buffer
 
     # Almacenar datos en self - datos que se reutilicen en el documento
     def completar_datos(self, cuestionario, fecha, sec1, sec2):
@@ -691,8 +773,21 @@ class GeneradorAvisoPrivacidad:
         ruta_plantilla = (settings.PLANTILLAS_DOCX/ "plantillaAvp.docx")
         doc = DocxTemplate(ruta_plantilla)
 
-        self.docto = Path(settings.BASE_DIR) / nombrearchivo
-
+        # self.docto = Path(settings.BASE_DIR) / nombrearchivo
+        self.docto = BytesIO()
         doc.save(self.docto)
+        self.docto.seek(0)
 
         print("¡Documento generado exitosamente!")
+
+
+    def descargarDocumento(self, nombrearchivo):
+
+        self.docto.seek(0)
+
+        return FileResponse(
+            self.docto,
+            as_attachment=True,
+            filename=nombrearchivo,
+            content_type="application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+        )

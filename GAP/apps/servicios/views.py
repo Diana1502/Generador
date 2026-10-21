@@ -73,13 +73,14 @@ def word_integral(request, cuestionario_id):
     generador.escribir_portabilidad(sec11)
     generador.escribir_infoAdicional(sec12.observaciones)
     generador.escribir_fecha()
+    return generador.descargarDocumento(nombrearchivo)
 
     # return FileResponse(
     #     open(nombrearchivo, "rb"),
     #     as_attachment= True,
     #     filename= nombrearchivo
     # )
-    return redirect('apps.cuestionarios:dashboard') # Agregar imagen de creando o descargando
+    # return redirect('apps.cuestionarios:dashboard') # Agregar imagen de creando o descargando
 
 
 # Word Integral AvP
@@ -117,5 +118,6 @@ def word_simplificado(request, cuestionario_id):
     generador.escribir_seccion8(sec8, "IV")
     generador.escribir_conocerAvP(sec9)
     generador.escribir_fecha()
+    return generador.descargarDocumento(nombrearchivo)
 
-    return redirect('apps.cuestionarios:dashboard') # Agregar imagen de creando o descargando
+    # return redirect('apps.cuestionarios:dashboard') # Agregar imagen de creando o descargando
