@@ -11,7 +11,6 @@ urlpatterns = [
     path('aviso-de-privacidad/<uuid:cuestionario_id>/continuar/', views.continuar, name='continuar'),
     path('aviso-de-privacidad/<uuid:cuestionario_id>/seccion/<int:numero>/', views.seccion, name='seccion'),
     path('aviso-de-privacidad/<uuid:cuestionario_id>/eliminar/', views.eliminar, name='eliminar'),
-    # path('aviso-de-privacidad/<uuid:cuestionario_id>/', views.cuestionario_detalle, name='urlcuestionario'),
 
     # Municipios
     # path("ver-municipios/", views.municipios_view, name="municipios_view"),
