@@ -248,6 +248,7 @@ class SecEjercicioARCOForm(forms.ModelForm):
     extension = forms.CharField(
         label=mark_safe("Extension(es)"),
         max_length=20,
+        # validators=[solo_numeros],
         widget=forms.TextInput(attrs={
             'class': 'form-control'
         })
@@ -383,6 +384,7 @@ class SecUTForm(forms.ModelForm):
     extension = forms.CharField(
         label=mark_safe("Extension(es)"),
         max_length=20,
+        # validators=[solo_numeros],
         widget=forms.TextInput(attrs={
             'class': 'form-control'
         })
@@ -573,11 +575,12 @@ class SecCambiosAvPForm(forms.ModelForm):
         }),
         required=False
     )
-    url = forms.CharField(
+    url = forms.URLField(
         label=mark_safe("URL para consultar los cambios al aviso de privacidad"),
+        assume_scheme='https',
         widget=forms.TextInput(attrs={
             'class': 'form-control'
-        })
+        }),
     )
 
     class Meta:

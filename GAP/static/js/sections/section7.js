@@ -9,6 +9,7 @@ export function init() {
     const inputNumInt = document.querySelector("#id_numInt_ut");
     const inputcodigoPost = document.querySelector("#id_codigoPost_ut");
     const inputTelefono = document.querySelector("#id_telefono");
+    const inputExtension = document.querySelector("#id_extension");
 
     const selectEstado = document.querySelector("#id_entidadFed_ut");
     const selectMunicipio = document.querySelector("#id_municipio_ut");
@@ -96,6 +97,11 @@ export function init() {
     inputNumInt.addEventListener("input", soloNumero);
     inputcodigoPost.addEventListener("input", soloNumero);
     inputTelefono.addEventListener("input", soloNumero);
+
+    function soloExtension(e) {
+        e.target.value = e.target.value.replace(/[^0-9 ]/g, '');
+    }
+    inputExtension.addEventListener("input", soloExtension);
 
 
     mismaDireccion.addEventListener("change", async function () {
