@@ -209,7 +209,7 @@ class SecEjercicioARCO(models.Model):
     entidadFed_unidadresp = models.ForeignKey(Estado, on_delete=models.CASCADE)
     codigoPost_unidadresp = models.CharField(max_length=5)
 
-    correo = models.CharField(max_length=100)
+    correo = models.EmailField(max_length=254)
     telefono = models.CharField(max_length=10)
     extension = models.CharField(max_length=20)
 
@@ -243,7 +243,7 @@ class SecUT(models.Model):
 
     telefono = models.CharField(max_length=10)
     extension = models.CharField(max_length=20)
-    correo = models.CharField(max_length=100)
+    correo = models.EmailField(max_length=254)
     horarioInicio = models.TimeField()
     horarioFin = models.TimeField()
     paginaWeb = models.URLField(max_length=200, blank=True, null=True)
