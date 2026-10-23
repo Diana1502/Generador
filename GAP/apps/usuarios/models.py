@@ -12,6 +12,8 @@ class Usuario(AbstractUser):
 
     def __str__(self):
         return self.username
+
+
 # Función para cerrar sesiones simultaneas
 @receiver(user_logged_in)
 def cerrar_sesiones_simultaneas(sender, user, request, **kwargs):
@@ -21,8 +23,6 @@ def cerrar_sesiones_simultaneas(sender, user, request, **kwargs):
         request.session.create()
 
     clave_sesion_actual = request.session.session_key
-
-
 
     #Obtenemos todas las sesiones activas en la base de datos
     sesiones_activas = Session.objects.filter(expire_date__gte=timezone.now())
