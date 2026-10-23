@@ -158,21 +158,58 @@ export function init() {
 //     ==========================================
 //     HELPERS
 //     ==========================================
+//     function obtenerDatos() {
+//         const formData = new FormData();
+//
+//         const dato = document.querySelector("#dato").value;
+//         const datosSensibles = document.querySelector("#datosSensibles").value;
+//         const obtencionDatos = document.querySelector("#obtencionDatos").value;
+//         const medioObtencion = document.querySelector("#medioObtencion").value;
+//
+//         formData.append("dato",dato);
+//         formData.append("datosSensibles",datosSensibles);
+//         formData.append("obtencionDatos",obtencionDatos);
+//         formData.append("medioObtencion",medioObtencion);
+//
+//         for (const pair of formData.entries()) {
+//             console.log(pair[0], pair[1]);
+//         }
+//
+//         return formData;
+//     }
     function obtenerDatos() {
+        const campos = {
+            dato: document.querySelector("#dato"),
+            datosSensibles: document.querySelector("#datosSensibles"),
+            obtencionDatos: document.querySelector("#obtencionDatos"),
+            medioObtencion: document.querySelector("#medioObtencion")
+        };
+
+        // Limpiar errores anteriores
+        Object.values(campos).forEach(campo => {
+            campo.setCustomValidity("");
+            campo.classList.remove("is-invalid");
+        });
+
+        // Validar campos obligatorios
+        for (const [nombre, campo] of Object.entries(campos)) {
+
+            if (!campo.value.trim()) {
+                campo.setCustomValidity("Este campo es obligatorio.");
+                campo.classList.add("is-invalid");
+
+                campo.reportValidity();
+                campo.focus();
+
+                return null;
+            }
+        }
+
+        // Construir FormData únicamente si es válido
         const formData = new FormData();
 
-        const dato = document.querySelector("#dato").value;
-        const datosSensibles = document.querySelector("#datosSensibles").value;
-        const obtencionDatos = document.querySelector("#obtencionDatos").value;
-        const medioObtencion = document.querySelector("#medioObtencion").value;
-
-        formData.append("dato",dato);
-        formData.append("datosSensibles",datosSensibles);
-        formData.append("obtencionDatos",obtencionDatos);
-        formData.append("medioObtencion",medioObtencion);
-
-        for (const pair of formData.entries()) {
-            console.log(pair[0], pair[1]);
+        for (const [nombre, campo] of Object.entries(campos)) {
+            formData.append(nombre, campo.value.trim());
         }
 
         return formData;

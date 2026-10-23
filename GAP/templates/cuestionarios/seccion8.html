@@ -35,13 +35,13 @@
                                  <label>
                                     Nombre
                                 </label>
-                                <input type="text" id="destinatario" class="form-control">
+                                <input type="text" id="destinatario" class="form-control" name="destinatario" required>
                             </div>
                             <div class="col-md-6">
                                 <label>
                                     Tipo de destinatario
                                 </label>
-                                <select id="tipoConsentimiento" class="form-select">
+                                <select id="tipoConsentimiento" class="form-select" name="tipoConsentimiento" required>
                                     <option value="A">Entidad o Dependencia de la APF</option>
                                     <option value="F">Entidad Federativa</option>
                                     <option value="M">Municipio</option>
@@ -59,7 +59,7 @@
                                 <label>
                                     ¿Requiere consentimiento?
                                 </label>
-                                <select id="consentimiento" class="form-select">
+                                <select id="consentimiento" class="form-select" name="consentimiento" required>
                                     <option value="true">
                                         Sí
                                     </option>

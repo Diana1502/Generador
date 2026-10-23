@@ -38,13 +38,13 @@
                                  <label>
                                     ¿Qué dato estas recopilando?
                                 </label>
-                                <input type="text" id="dato" class="form-control">
+                                <input type="text" id="dato" class="form-control" required>
                             </div>
                             <div class="col-md-6">
                                 <label>
                                     ¿Es un dato sensible?
                                 </label>
-                                <select id="datosSensibles" class="form-select">
+                                <select id="datosSensibles" class="form-select" required>
                                     <option value="true">
                                         Sí
                                     </option>
@@ -62,7 +62,7 @@
                                 <label>
                                     ¿Cómo se obtuvieron los datos?
                                 </label>
-                                <select id="obtencionDatos" class="form-select">
+                                <select id="obtencionDatos" class="form-select" required>
                                     <option value="T">Directamente del titular</option>
                                     <option value="E">Representante legal</option>
                                     <option value="A">Otra autoridad</option>
@@ -85,7 +85,7 @@
                                 <label>
                                 ¿Con que medio se obtuvieron los datos?
                                 </label>
-                                <select id="medioObtencion"  class="form-select">
+                                <select id="medioObtencion"  class="form-select" required>
                                     <option value="F">Formulario</option>
                                     <option value="E">Ventanilla</option>
                                     <option value="C">Correo electrónico</option>
@@ -177,6 +177,7 @@
                                         <p>{{ fundamento.get_medioObtencion_display }}</p>
 
                                     </td>
+
 
                                     <td>
 

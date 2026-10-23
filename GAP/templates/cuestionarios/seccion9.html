@@ -30,6 +30,7 @@
                     <div class="card-body contenedor-grid">
                         <p>{{ form.manifestacion.label_tag }}</p>
                         {{ form.manifestacion }}
+                        {{ form.manifestacion.errors }}
 
                         <hr>
 
@@ -44,7 +45,7 @@
                     
                 </div>
 
-                {{ form.errors }}
+                {{ form.non_field_errors }}
             </div>
 
             <div class="btns-div">
