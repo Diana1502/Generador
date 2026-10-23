@@ -279,3 +279,15 @@ option {
 .texto-justificado {
     text-align: justify;
 }
+
+/* Corregir */
+
+#sidebar {
+    margin-top: 80px;
+    height: 90%;
+    border-radius: 15px;
+}
+
+#sidebarContent{
+    margin-top: -5rem;
+}
