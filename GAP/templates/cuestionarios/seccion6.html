@@ -31,10 +31,12 @@
                         <h5>Ejercicio de los derechos ARCO</h5>
                         <p>Describa el <b>procedimiento</b> para la <b>solicitud de derechos ARCO</b>.</p>
                         {{ form.procARCO }}
+                        {{ form.procARCO.errors }}
 
                         <br>
                         <p>Indique los medios de presentación</p>
                         {{ form.medPresentacion }}
+                        {{ form.medPresentacion.errors }}
 
                         <hr>
                         <div class="row">
@@ -42,21 +44,25 @@
                             <div class="col-md-6">
                                 <label>{{form.unidadResp.label}}</label>
                                 {{ form.unidadResp }}
+                                {{ form.unidadResp.errors }}
                             </div>
 
                             <div class="col-md-6">
                                 <label>{{ form.correo.label }}</label>
                                 {{ form.correo }}
+                                {{ form.correo.errors }}
                             </div>
 
                             <div class="col-md-6">
                                 <label>{{ form.telefono.label }}</label>
                                 {{ form.telefono }}
+                                {{ form.telefono.errors }}
                             </div>
 
                             <div class="col-md-6">
                                 <label>{{ form.extension.label }}</label>
                                 {{ form.extension }}
+                                {{ form.extension.errors }}
                             </div>
                         </div>
 
@@ -198,7 +204,7 @@
                         </div>
                 </div>
 
-                {{ form.errors }}
+                {{ form.non_field_errors }}
             </div>
 
             <div class="btns-div">
